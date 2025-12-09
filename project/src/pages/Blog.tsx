@@ -1,4 +1,4 @@
-import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 export default function Blog() {
   const blogPosts = [
@@ -20,7 +20,7 @@ export default function Blog() {
     },
     {
       title: 'Why Your Business Needs a Mobile-First Website',
-      excerpt: 'Mobile traffic now accounts for over 60% of web browsing. Here\'s why responsive design is no longer optional.',
+      excerpt: "Mobile traffic now accounts for over 60% of web browsing. Here's why responsive design is no longer optional.",
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: 'Nov 15, 2024',
       readTime: '6 min read',
@@ -43,7 +43,7 @@ export default function Blog() {
       category: 'Analytics',
     },
     {
-      title: 'Social Media Trends You Can\'t Ignore This Year',
+      title: "Social Media Trends You Can't Ignore This Year",
       excerpt: 'Stay ahead of the curve with these emerging social media trends that are reshaping digital marketing.',
       image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: 'Nov 8, 2024',
@@ -55,59 +55,71 @@ export default function Blog() {
   const categories = ['All', 'SEO', 'Marketing', 'Web Development', 'Content', 'Analytics', 'Social Media'];
 
   return (
-    <div className="bg-white">
-      <section className="bg-gradient-to-br from-orange-50 to-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-orange-500">Blog</span>
+    <div className="bg-white overflow-hidden">
+      {/* Hero */}
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 via-white to-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-24 -left-24 w-80 h-80 bg-orange-100 rounded-full blur-3xl opacity-50"></div>
+          <div className="absolute top-10 right-4 w-72 h-72 bg-orange-200 rounded-full blur-3xl opacity-40"></div>
+          <div className="absolute bottom-[-80px] left-1/2 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-40"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10 text-center space-y-5">
+          <div className="inline-flex items-center gap-2 bg-white/80 border border-orange-100 text-orange-700 rounded-full px-4 py-2 text-sm font-semibold shadow-sm">
+            Fresh insights every week
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+            Ideas, trends, and <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">playbooks</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Expert insights, industry trends, and practical tips to help you succeed in the digital world
+            Curated thinking from our strategists, designers, and engineers on what moves the needle in digital.
           </p>
         </div>
       </section>
 
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {categories.map((category, index) => (
-              <button
-                key={index}
-                className={`px-6 py-2 rounded-full font-medium transition-colors ${
-                  index === 0
-                    ? 'bg-orange-500 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-orange-50 hover:text-orange-500'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+      {/* Categories */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 border-b border-orange-100/60 bg-white">
+        <div className="max-w-6xl mx-auto flex flex-wrap gap-3 justify-center">
+          {categories.map((category, index) => (
+            <button
+              key={index}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all border ${
+                index === 0
+                  ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white border-transparent shadow-md'
+                  : 'bg-white text-gray-700 border-orange-100 hover:border-orange-300 hover:text-orange-600'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Posts */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-orange-50/30 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
               <article
                 key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-gray-100 group"
+                className="group relative bg-white rounded-2xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-2xl transition-all"
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-white/90 text-orange-600 px-3 py-1 rounded-full text-xs font-semibold border border-orange-100 shadow-sm">
                       {post.category}
                     </span>
                   </div>
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+
+                <div className="p-6 space-y-4">
+                  <div className="flex items-center gap-4 text-sm text-gray-500">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       {post.date}
@@ -117,13 +129,13 @@ export default function Blog() {
                       {post.readTime}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-500 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-orange-600 transition-colors leading-snug">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{post.excerpt}</p>
-                  <button className="text-orange-500 font-semibold hover:text-orange-600 flex items-center gap-2 group">
-                    Read More
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <p className="text-gray-600 leading-relaxed">{post.excerpt}</p>
+                  <button className="inline-flex items-center gap-2 text-orange-600 font-semibold group-hover:gap-3 transition-all">
+                    Read article
+                    <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               </article>
@@ -132,42 +144,48 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center gap-2">
-            {[1, 2, 3, 4].map((page) => (
-              <button
-                key={page}
-                className={`w-10 h-10 rounded-lg font-medium transition-colors ${
-                  page === 1
-                    ? 'bg-orange-500 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-orange-50 hover:text-orange-500'
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-          </div>
+      {/* Pagination */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto flex justify-center gap-2">
+          {[1, 2, 3, 4].map((page) => (
+            <button
+              key={page}
+              className={`w-11 h-11 rounded-xl font-semibold transition-all border ${
+                page === 1
+                  ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white border-transparent shadow-md'
+                  : 'bg-white text-gray-700 border-orange-100 hover:border-orange-300 hover:text-orange-600'
+              }`}
+            >
+              {page}
+            </button>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Subscribe to Our Newsletter
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Get the latest digital marketing insights delivered straight to your inbox
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            />
-            <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors whitespace-nowrap">
-              Subscribe
-            </button>
+      {/* Newsletter */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto relative overflow-hidden rounded-3xl border border-orange-100 bg-gradient-to-r from-orange-50 via-white to-white shadow-xl">
+          <div className="absolute -left-12 top-0 w-48 h-48 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
+          <div className="absolute right-6 -bottom-10 w-52 h-52 bg-orange-200 rounded-full blur-3xl opacity-50"></div>
+
+          <div className="relative px-8 py-14 text-center space-y-4">
+            <div className="inline-flex items-center gap-2 bg-white/70 border border-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
+              Stay ahead
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900">Subscribe to our newsletter</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Get fresh tactics, templates, and case studies delivered monthly.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto pt-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-6 py-3 rounded-xl border border-orange-100 bg-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+              <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
       </section>

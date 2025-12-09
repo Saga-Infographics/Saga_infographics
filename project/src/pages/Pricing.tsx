@@ -7,177 +7,211 @@ interface PricingProps {
 export default function Pricing({ onNavigate }: PricingProps) {
   const plans = [
     {
-      name: 'Basic',
+      name: 'Starter',
       price: '$999',
       period: '/month',
-      description: 'Perfect for small businesses getting started with digital services',
+      description: 'For early-stage teams validating ideas and launching fast.',
       features: [
-        'Website Development (5 pages)',
-        'Basic SEO Setup',
-        'Social Media Management (2 platforms)',
-        'Monthly Analytics Report',
-        'Email Support',
-        '2 Revisions per month',
+        'Website (up to 6 pages)',
+        'Foundational SEO setup',
+        '2 social channels managed',
+        'Monthly performance snapshot',
+        'Email support',
+        '2 revisions per month',
       ],
       popular: false,
     },
     {
-      name: 'Standard',
+      name: 'Growth',
       price: '$2,499',
       period: '/month',
-      description: 'Ideal for growing businesses ready to scale their digital presence',
+      description: 'For scaling brands that need acquisition, automation, and speed.',
       features: [
-        'Website Development (10 pages)',
-        'Advanced SEO Optimization',
-        'Social Media Management (4 platforms)',
-        'Content Creation (8 posts/month)',
-        'PPC Campaign Management',
-        'Weekly Analytics Reports',
-        'Priority Email & Phone Support',
-        'Unlimited Revisions',
-        'Marketing Automation Setup',
+        'Website (up to 12 pages)',
+        'Advanced SEO optimization',
+        '4 social channels managed',
+        '8 content assets / month',
+        'PPC campaign management',
+        'Weekly analytics & CRO recs',
+        'Priority support',
+        'Automation setup & nurture',
       ],
       popular: true,
     },
     {
-      name: 'Premium',
+      name: 'Enterprise',
       price: '$4,999',
       period: '/month',
-      description: 'Complete digital transformation for established enterprises',
+      description: 'For established teams demanding custom builds and full-funnel ownership.',
       features: [
-        'Custom Web Application',
-        'Comprehensive SEO Strategy',
-        'Full Social Media Management (All platforms)',
-        'Content Creation (20 posts/month)',
-        'Multi-channel PPC Campaigns',
-        'Video Production (2 per month)',
-        'Real-time Analytics Dashboard',
-        '24/7 Dedicated Support',
-        'Unlimited Revisions',
-        'Advanced Marketing Automation',
-        'CRM Integration',
-        'Dedicated Account Manager',
+        'Custom web app / portal',
+        'Comprehensive SEO strategy',
+        'Omnichannel social & community',
+        '20+ premium content assets',
+        'Multi-channel PPC & retargeting',
+        'Real-time dashboards',
+        '24/7 dedicated support',
+        'Automation, CRM, and integrations',
       ],
       popular: false,
     },
   ];
 
+  const faqs = [
+    {
+      question: 'Can I change my plan later?',
+      answer: 'Absolutely. Upgrade or downgrade anytime—changes apply to the next billing cycle.',
+    },
+    {
+      question: 'What payment methods do you accept?',
+      answer: 'Major credit cards, bank transfer, and PayPal. Annual contracts can be invoiced.',
+    },
+    {
+      question: 'Is there a setup fee?',
+      answer: 'No setup fees. Onboarding and launch support are included in every plan.',
+    },
+    {
+      question: 'Can we request a custom mix of services?',
+      answer: 'Yes. We frequently tailor mixes across plans—tell us your goals and we’ll scope it.',
+    },
+    {
+      question: 'Do you offer refunds?',
+      answer: 'If you’re not satisfied in the first 30 days, we’ll refund your plan—no hassle.',
+    },
+  ];
+
   return (
-    <div className="bg-white">
-      <section className="bg-gradient-to-br from-orange-50 to-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Simple, Transparent <span className="text-orange-500">Pricing</span>
+    <div className="bg-white overflow-hidden">
+      {/* Hero */}
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 via-white to-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-24 -left-24 w-80 h-80 bg-orange-100 rounded-full blur-3xl opacity-50"></div>
+          <div className="absolute top-12 right-8 w-72 h-72 bg-orange-200 rounded-full blur-3xl opacity-40"></div>
+          <div className="absolute bottom-[-80px] left-1/2 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-40"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10 text-center space-y-5">
+          <div className="inline-flex items-center gap-2 bg-white/80 border border-orange-100 text-orange-700 rounded-full px-4 py-2 text-sm font-semibold shadow-sm">
+            Straightforward, no hidden fees
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+            Choose a plan that <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">moves you forward</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Choose the perfect plan for your business needs. All plans include our commitment to excellence.
+            Flexible engagement models built for speed, clarity, and measurable ROI.
           </p>
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Plans */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-orange-50/30 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`rounded-2xl p-8 border-2 ${
-                  plan.popular
-                    ? 'border-orange-500 shadow-2xl relative scale-105'
-                    : 'border-gray-200 shadow-lg'
-                } bg-white transition-transform hover:scale-105`}
+                className={`relative overflow-hidden rounded-2xl border bg-white transition-all shadow-sm hover:shadow-2xl ${
+                  plan.popular ? 'border-orange-300 shadow-xl' : 'border-orange-100'
+                }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      Most Popular
-                    </span>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                    Most popular
                   </div>
                 )}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline justify-center gap-1 mb-2">
-                    <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
-                    <span className="text-gray-600">{plan.period}</span>
-                  </div>
-                  <p className="text-gray-600 text-sm">{plan.description}</p>
-                </div>
-                <div className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent"></div>
+                <div className="relative p-8 space-y-6">
+                  <div className="space-y-2 text-center">
+                    <h3 className="text-2xl font-bold text-gray-900">{plan.name}</h3>
+                    <div className="flex items-baseline justify-center gap-2">
+                      <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
+                      <span className="text-gray-600">{plan.period}</span>
                     </div>
-                  ))}
+                    <p className="text-gray-600 text-sm leading-relaxed">{plan.description}</p>
+                  </div>
+
+                  <div className="space-y-3">
+                    {plan.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-700 leading-relaxed">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => onNavigate('contact')}
+                    className={`w-full py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg hover:shadow-xl'
+                        : 'border-2 border-orange-200 text-orange-700 hover:bg-orange-50'
+                    }`}
+                  >
+                    Get started
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
                 </div>
-                <button
-                  onClick={() => onNavigate('contact')}
-                  className={`w-full py-4 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2 group ${
-                    plan.popular
-                      ? 'bg-orange-500 text-white hover:bg-orange-600'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                  }`}
-                >
-                  Get Started
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Frequently Asked <span className="text-orange-500">Questions</span>
-          </h2>
-          <div className="space-y-6">
-            {[
-              {
-                question: 'Can I change my plan later?',
-                answer: 'Yes! You can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.',
-              },
-              {
-                question: 'What payment methods do you accept?',
-                answer: 'We accept all major credit cards, bank transfers, and PayPal. Custom payment arrangements are available for annual contracts.',
-              },
-              {
-                question: 'Is there a setup fee?',
-                answer: 'No setup fees! All plans include onboarding and initial setup at no additional cost.',
-              },
-              {
-                question: 'What if I need services from multiple plans?',
-                answer: 'We offer custom packages tailored to your specific needs. Contact us to discuss a personalized solution.',
-              },
-              {
-                question: 'Do you offer refunds?',
-                answer: 'We offer a 30-day money-back guarantee if you\'re not satisfied with our services. No questions asked.',
-              },
-            ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+      {/* FAQ */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-5xl mx-auto space-y-12">
+          <div className="text-center space-y-3">
+            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">
+              FAQs
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900">Answers to common questions</h2>
+            <p className="text-lg text-gray-600">Clear, concise details so you can choose with confidence.</p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-orange-100 bg-white shadow-sm hover:shadow-md transition-all p-6"
+              >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-500 to-orange-600">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Need a Custom Package?
-          </h2>
-          <p className="text-xl text-orange-50 mb-8 leading-relaxed">
-            Let's create a tailored solution that perfectly fits your business requirements and budget
-          </p>
-          <button
-            onClick={() => onNavigate('contact')}
-            className="bg-white text-orange-500 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
-          >
-            Contact Us for Custom Pricing
-          </button>
+      {/* CTA */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto relative overflow-hidden rounded-3xl border border-orange-100 bg-gradient-to-r from-orange-50 via-white to-white shadow-xl">
+          <div className="absolute -left-12 top-0 w-48 h-48 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
+          <div className="absolute right-6 -bottom-10 w-52 h-52 bg-orange-200 rounded-full blur-3xl opacity-50"></div>
+
+          <div className="relative px-8 py-14 text-center space-y-4">
+            <div className="inline-flex items-center gap-2 bg-white/70 border border-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
+              Need something custom?
+            </div>
+            <h3 className="text-4xl font-bold text-gray-900">Let’s tailor a package for you</h3>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Share your goals and constraints—we’ll build a bespoke engagement that fits perfectly.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <button
+                onClick={() => onNavigate('contact')}
+                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+              >
+                Talk to our team
+                <ArrowRight className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => onNavigate('services')}
+                className="border-2 border-orange-200 text-orange-700 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all"
+              >
+                Explore services
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
