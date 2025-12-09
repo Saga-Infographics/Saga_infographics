@@ -4,9 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-orange': '#FF7A00',
-        'brand-navy': '#001F3F',
-        'brand-offwhite': '#FAFAFA',
+        'brand-orange': '#FF6B00',
+        'brand-slate': '#1C1C1E',
+        'brand-softgray': '#F5F5F7',
+        'brand-white': '#FFFFFF',
+        'brand-accent-blue': '#3A7BD5',
       },
     },
   },

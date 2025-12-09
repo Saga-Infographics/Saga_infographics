@@ -55,38 +55,38 @@ export default function Blog() {
   const categories = ['All', 'SEO', 'Marketing', 'Web Development', 'Content', 'Analytics', 'Social Media'];
 
   return (
-    <div className="bg-[#001F3F] overflow-hidden">
+    <div className="bg-gradient-to-b from-white to-gray-50/50 overflow-hidden">
       {/* Hero */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#001F3F] overflow-hidden">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50/50 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#FF7A00]/10 rounded-full blur-3xl opacity-50"></div>
-          <div className="absolute top-10 right-4 w-72 h-72 bg-[#FF7A00]/20 rounded-full blur-3xl opacity-40"></div>
-          <div className="absolute bottom-[-80px] left-1/2 w-96 h-96 bg-[#FF7A00]/10 rounded-full blur-3xl opacity-40"></div>
+          <div className="absolute -top-24 -left-24 w-80 h-80 bg-gradient-to-r from-[#FF6B00] to-[#FF8C00]/10 rounded-full blur-3xl opacity-50"></div>
+          <div className="absolute top-10 right-4 w-72 h-72 bg-gradient-to-r from-[#FF6B00] to-[#FF8C00]/20 rounded-full blur-3xl opacity-40"></div>
+          <div className="absolute bottom-[-80px] left-1/2 w-96 h-96 bg-gradient-to-r from-[#FF6B00] to-[#FF8C00]/10 rounded-full blur-3xl opacity-40"></div>
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10 text-center space-y-5">
-          <div className="inline-flex items-center gap-2 bg-[#001F3F]/80 border border-[#FF7A00]/10 text-[#FF7A00] rounded-full px-4 py-2 text-sm font-semibold shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-white/80 border border-[#FF6B00]/10 text-[#FF6B00] rounded-full px-4 py-2 text-sm font-semibold shadow-lg shadow-[#FF6B00]/5">
             Fresh insights every week
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-            Ideas, trends, and <span className="text-[#FF7A00]">playbooks</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-[#FF6B00] leading-tight">
+            Ideas, trends, and <span className="text-[#FF6B00]">playbooks</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Curated thinking from our strategists, designers, and engineers on what moves the needle in digital.
           </p>
         </div>
       </section>
 
       {/* Categories */}
-      <section className="py-10 px-4 sm:px-6 lg:px-8 border-b border-[#FF7A00]/10/60 bg-[#001F3F]">
+      <section className="py-10 px-4 sm:px-6 lg:px-8 border-b border-[#FF6B00]/10/60 bg-gradient-to-b from-white to-gray-50/50">
         <div className="max-w-6xl mx-auto flex flex-wrap gap-3 justify-center">
           {categories.map((category, index) => (
             <button
               key={index}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all border ${
                 index === 0
-                  ? 'bg-[#FF7A00] text-white border-transparent shadow-md'
-                  : 'bg-[#001F3F] text-gray-700 border-[#FF7A00]/10 hover:border-[#FF7A00]/30 hover:text-[#FF7A00]'
+                  ? 'bg-[#FF6B00] text-white border-transparent shadow-xl shadow-[#FF6B00]/10'
+                  : 'bg-gradient-to-b from-white to-gray-50/50 text-[#FF6B00] border-[#FF6B00]/10 hover:border-[#FF6B00]/30 hover:text-[#FF6B00]'
               }`}
             >
               {category}
@@ -96,13 +96,13 @@ export default function Blog() {
       </section>
 
       {/* Posts */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-[#F2F2F2]/30 to-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-[#F5F5F7]/30 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
               <article
                 key={index}
-                className="group relative bg-[#001F3F] rounded-2xl overflow-hidden border border-[#FF7A00]/10 shadow-sm hover:shadow-2xl transition-all"
+                className="group relative bg-gradient-to-b from-white to-gray-50/50 rounded-2xl overflow-hidden border border-[#FF6B00]/10 shadow-lg shadow-[#FF6B00]/5 hover:shadow-2xl transition-all"
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -112,14 +112,14 @@ export default function Blog() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-[#001F3F]/90 text-[#FF7A00] px-3 py-1 rounded-full text-xs font-semibold border border-[#FF7A00]/10 shadow-sm">
+                    <span className="bg-white/90 text-[#FF6B00] px-3 py-1 rounded-full text-xs font-semibold border border-[#FF6B00]/10 shadow-lg shadow-[#FF6B00]/5">
                       {post.category}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-6 space-y-4">
-                  <div className="flex items-center gap-4 text-sm text-gray-400">
+                  <div className="flex items-center gap-4 text-sm text-gray-500">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       {post.date}
@@ -129,11 +129,11 @@ export default function Blog() {
                       {post.readTime}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-[#FF7A00] transition-colors leading-snug">
+                  <h3 className="text-xl font-semibold text-[#FF6B00] group-hover:text-[#FF6B00] transition-colors leading-snug">
                     {post.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">{post.excerpt}</p>
-                  <button className="inline-flex items-center gap-2 text-[#FF7A00] font-semibold group-hover:gap-3 transition-all">
+                  <p className="text-gray-600 leading-relaxed">{post.excerpt}</p>
+                  <button className="inline-flex items-center gap-2 text-[#FF6B00] font-semibold group-hover:gap-3 transition-all">
                     Read article
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -145,15 +145,15 @@ export default function Blog() {
       </section>
 
       {/* Pagination */}
-      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-[#001F3F]">
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50/50">
         <div className="max-w-6xl mx-auto flex justify-center gap-2">
           {[1, 2, 3, 4].map((page) => (
             <button
               key={page}
-              className={`w-11 h-11 rounded-xl font-semibold transition-all border ${
+              className={`w-11 h-11 rounded-2xl font-semibold transition-all border ${
                 page === 1
-                  ? 'bg-[#FF7A00] text-white border-transparent shadow-md'
-                  : 'bg-[#001F3F] text-gray-700 border-[#FF7A00]/10 hover:border-[#FF7A00]/30 hover:text-[#FF7A00]'
+                  ? 'bg-[#FF6B00] text-white border-transparent shadow-xl shadow-[#FF6B00]/10'
+                  : 'bg-gradient-to-b from-white to-gray-50/50 text-[#FF6B00] border-[#FF6B00]/10 hover:border-[#FF6B00]/30 hover:text-[#FF6B00]'
               }`}
             >
               {page}
@@ -164,25 +164,25 @@ export default function Blog() {
 
       {/* Newsletter */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto relative overflow-hidden rounded-3xl border border-[#FF7A00]/10 bg-gradient-to-r from-[#F2F2F2] via-white to-white shadow-xl">
-          <div className="absolute -left-12 top-0 w-48 h-48 bg-[#FF7A00]/10 rounded-full blur-3xl opacity-60"></div>
-          <div className="absolute right-6 -bottom-10 w-52 h-52 bg-[#FF7A00]/20 rounded-full blur-3xl opacity-50"></div>
+        <div className="max-w-5xl mx-auto relative overflow-hidden rounded-3xl border border-[#FF6B00]/10 bg-gradient-to-r from-[#F5F5F7] via-white to-white shadow-xl">
+          <div className="absolute -left-12 top-0 w-48 h-48 bg-gradient-to-r from-[#FF6B00] to-[#FF8C00]/10 rounded-full blur-3xl opacity-60"></div>
+          <div className="absolute right-6 -bottom-10 w-52 h-52 bg-gradient-to-r from-[#FF6B00] to-[#FF8C00]/20 rounded-full blur-3xl opacity-50"></div>
 
           <div className="relative px-8 py-14 text-center space-y-4">
-            <div className="inline-flex items-center gap-2 bg-[#001F3F]/70 border border-[#FF7A00]/10 text-[#FF7A00] px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B00] to-[#FF8C00]/10 border-2 border-[#FF6B00]/30 hover:border-[#FF6B00] transition-all text-[#FF6B00] px-4 py-2 rounded-full text-sm font-semibold shadow-lg shadow-[#FF6B00]/5">
               Stay ahead
             </div>
-            <h2 className="text-4xl font-bold text-white">Subscribe to our newsletter</h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-[#FF6B00]">Subscribe to our newsletter</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Get fresh tactics, templates, and case studies delivered monthly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto pt-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-xl border border-[#FF7A00]/10 bg-[#001F3F] focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
+                className="flex-1 px-6 py-3 rounded-2xl border border-[#FF6B00]/15 bg-[#FFFFFF] text-[#FF6B00] placeholder-[#1C1C1E]/50 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]"
               />
-              <button className="bg-[#FF7A00] text-white px-8 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all">
+              <button className="bg-[#FF6B00] text-white px-8 py-3 rounded-2xl font-bold shadow-lg shadow-[#FF6B00]/40 hover:shadow-2xl hover:shadow-[#FF6B00]/60 shadow-xl shadow-[#FF6B00]/10 hover:shadow-lg transition-all">
                 Subscribe
               </button>
             </div>
@@ -192,6 +192,7 @@ export default function Blog() {
     </div>
   );
 }
+
 
 
 

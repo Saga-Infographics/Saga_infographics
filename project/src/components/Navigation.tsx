@@ -1,5 +1,5 @@
-import { Menu, X, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X, ArrowRight, Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 interface NavigationProps {
   currentPage: string;
@@ -8,6 +8,15 @@ interface NavigationProps {
 
 export default function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', id: 'home' },
@@ -24,73 +33,83 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#001F3F] backdrop-blur-md shadow-xl border-b border-[#001F3F]/50">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-white/95 backdrop-blur-xl shadow-xl border-b border-[#FF6B00]/20' 
+        : 'bg-white/80 backdrop-blur-md border-b border-[#FF6B00]/10'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo & Brand */}
           <button
             onClick={() => handleNavClick('home')}
-            className="flex items-center space-x-3 group"
+            className="flex items-center space-x-3 group relative"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-[#FF7A00] rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
-              <img 
-                src="/src/assets/logo.png" 
-                alt="Saga Infographics Logo" 
-                className="relative w-12 h-12 object-contain transform group-hover:scale-110 transition-transform duration-300"
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B00] to-[#FF8C00] rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
+              <div className="relative bg-gradient-to-br from-[#FF6B00] to-[#FF8C00] p-2 rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                <img 
+                  src="/src/assets/logo.png" 
+                  alt="Saga Infographics Logo" 
+                  className="relative w-8 h-8 object-contain transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 filter brightness-0 invert"
+                />
+              </div>
             </div>
-            <div>
-              <span className="text-2xl font-black text-white hidden sm:inline">
-                Saga Infographics 
+            <div className="relative">
+              <span className="text-2xl font-black bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] bg-clip-text text-transparent hidden sm:inline group-hover:from-[#FF8C00] group-hover:to-[#FF6B00] transition-all duration-500">
+                Saga Infographics
               </span>
-              <span className="text-xl font-black text-white sm:hidden">
+              <span className="text-xl font-black bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] bg-clip-text text-transparent sm:hidden">
                 Saga
               </span>
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] group-hover:w-full transition-all duration-500"></div>
             </div>
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`text-sm font-bold px-5 py-2.5 rounded-xl transition-all duration-300 relative group/nav overflow-hidden ${
+                className={`text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 relative group/nav overflow-hidden ${
                   currentPage === item.id
-                    ? 'text-white bg-[#FF7A00] shadow-lg'
-                    : 'text-gray-300 hover:text-[#FF7A00]'
+                    ? 'text-white bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] shadow-lg shadow-[#FF6B00]/30'
+                    : 'text-gray-600 hover:text-[#FF6B00]'
                 }`}
               >
                 <span className="relative z-10">{item.name}</span>
                 {currentPage !== item.id && (
-                  <div className="absolute inset-0 bg-[#FF7A00]/10 opacity-0 group-hover/nav:opacity-100 transition-opacity rounded-xl"></div>
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B00]/10 to-[#FF8C00]/10 opacity-0 group-hover/nav:opacity-100 transition-opacity rounded-full"></div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] group-hover/nav:w-3/4 transition-all duration-300"></div>
+                  </>
                 )}
               </button>
-            ))}
+            ))}            
             
             {/* CTA Button */}
             <button
               onClick={() => handleNavClick('contact')}
-              className="group ml-6 bg-[#FF7A00] text-white px-8 py-2.5 rounded-xl font-bold text-sm shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 overflow-hidden relative"
+              className="group ml-4 relative bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] text-white px-8 py-3 rounded-full font-bold text-sm shadow-lg shadow-[#FF6B00]/40 hover:shadow-2xl hover:shadow-[#FF6B00]/60 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-[#FF7A00] brightness-110 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <span className="relative flex items-center gap-1">
-                Get Started
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF8C00] to-[#FF6B00] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
+              <Sparkles className="relative w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
+              <span className="relative">Get Started</span>
+              <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2.5 rounded-xl hover:bg-[#001F3F]/50 transition-all duration-300 group"
+            className="md:hidden p-2.5 rounded-xl hover:bg-[#FF6B00]/10 transition-all duration-300 group"
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-[#FF7A00] group-hover:scale-110 transition-transform" />
+              <X className="w-6 h-6 text-[#FF6B00] group-hover:scale-110 transition-transform" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-300 group-hover:scale-110 transition-transform" />
+              <Menu className="w-6 h-6 text-[#FF6B00] group-hover:scale-110 transition-transform" />
             )}
           </button>
         </div>
@@ -98,16 +117,17 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-[#001F3F] border-t border-[#001F3F]/50">
-          <div className="px-4 py-6 space-y-2 max-w-md">
-            {navItems.map((item) => (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-[#FF6B00]/20 shadow-2xl animate-in slide-in-from-top duration-300">
+          <div className="px-4 py-6 space-y-2">
+            {navItems.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`block w-full text-left px-5 py-3 rounded-xl transition-all duration-300 font-semibold text-sm ${
+                style={{ animationDelay: `${index * 50}ms` }}
+                className={`block w-full text-left px-5 py-4 rounded-2xl transition-all duration-300 font-bold text-sm animate-in fade-in slide-in-from-left ${
                   currentPage === item.id
-                    ? 'bg-[#FF7A00] text-white shadow-lg'
-                    : 'text-gray-300 hover:bg-[#001F3F]/50 hover:text-[#FF7A00]'
+                    ? 'bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] text-white shadow-lg shadow-[#FF6B00]/30'
+                    : 'text-gray-600 hover:bg-gradient-to-r hover:from-[#FF6B00]/10 hover:to-[#FF8C00]/10 hover:text-[#FF6B00] border-2 border-transparent hover:border-[#FF6B00]/20'
                 }`}
               >
                 {item.name}
@@ -115,10 +135,11 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             ))}
             <button
               onClick={() => handleNavClick('contact')}
-              className="w-full bg-[#FF7A00] text-white px-5 py-3 rounded-xl font-bold text-sm hover:shadow-lg transition-all duration-300 shadow-md mt-4 flex items-center justify-center gap-2"
+              className="w-full bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] text-white px-5 py-4 rounded-2xl font-bold text-sm shadow-lg shadow-[#FF6B00]/40 hover:shadow-2xl transition-all duration-300 mt-4 flex items-center justify-center gap-2 group"
             >
+              <Sparkles className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
               <span>Get Started</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
@@ -126,3 +147,4 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
     </nav>
   );
 }
+
