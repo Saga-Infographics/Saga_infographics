@@ -99,43 +99,24 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: Briefcase, value: '500+', label: 'Projects', color: 'from-orange-500 to-orange-600' },
-              { icon: Users, value: '200+', label: 'Clients', color: 'from-blue-500 to-blue-600' },
-              { icon: Award, value: '50+', label: 'Experts', color: 'from-purple-500 to-purple-600' },
-              { icon: Star, value: '4.9★', label: 'Rating', color: 'from-pink-500 to-pink-600' },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="group bg-white p-8 rounded-2xl text-black shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 border border-gray-200"
-              >
-                <div className={`bg-gradient-to-br ${stat.color} p-4 rounded-xl w-fit group-hover:scale-110 transition-transform`}>
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-4xl font-bold mt-4 text-black">{stat.value}</div>
-                <div className="text-sm text-gray-600 mt-2">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-600 to-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-2000"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-600 px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-500/30 text-orange-300 px-4 py-2 rounded-full mb-4 backdrop-blur-sm">
               <Zap className="w-4 h-4" />
               <span className="text-sm font-semibold">Our Expertise</span>
             </div>
-            <h2 className="text-5xl font-bold text-gray-900 mb-4">
-              Comprehensive <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Services</span>
+            <h2 className="text-5xl font-bold text-white mb-4">
+              Comprehensive <span className="bg-gradient-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">Services</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               End-to-end digital solutions designed to accelerate your growth
             </p>
           </div>
@@ -163,28 +144,28 @@ export default function Home({ onNavigate }: HomeProps) {
             ].map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-orange-300 transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden"
+                className="group relative bg-gray-900/40 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:border-orange-400/50 transition-all duration-300 hover:shadow-2xl overflow-hidden"
               >
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
                     {service.title}
                   </h3>
                   
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-300 mb-6 leading-relaxed">
                     {service.description}
                   </p>
                   
                   <div className="space-y-2 mb-6">
                     {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                        <CheckCircle className="w-4 h-4 text-orange-500" />
+                      <div key={i} className="flex items-center gap-2 text-sm text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-orange-400" />
                         {feature}
                       </div>
                     ))}
@@ -192,7 +173,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
                   <button
                     onClick={() => onNavigate('services')}
-                    className="text-orange-600 font-semibold hover:text-orange-700 flex items-center gap-2 group/btn"
+                    className="text-orange-400 font-semibold hover:text-orange-300 flex items-center gap-2 group/btn"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

@@ -47,12 +47,12 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div className="md:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <img 
-                src="/src/assets/logo.svg" 
+                src="/src/assets/logo.png" 
                 alt="Saga Infographics Logo" 
                 className="w-12 h-12 object-contain"
               />
               <span className="text-2xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
-                Saga
+                Saga Infographics
               </span>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6 text-sm">
