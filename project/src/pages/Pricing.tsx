@@ -81,59 +81,59 @@ export default function Pricing({ onNavigate }: PricingProps) {
   ];
 
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="bg-[#001F3F] overflow-hidden">
       {/* Hero */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 via-white to-white overflow-hidden">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#001F3F] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-24 -left-24 w-80 h-80 bg-orange-100 rounded-full blur-3xl opacity-50"></div>
-          <div className="absolute top-12 right-8 w-72 h-72 bg-orange-200 rounded-full blur-3xl opacity-40"></div>
-          <div className="absolute bottom-[-80px] left-1/2 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-40"></div>
+          <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#FF7A00]/10 rounded-full blur-3xl opacity-50"></div>
+          <div className="absolute top-12 right-8 w-72 h-72 bg-[#FF7A00]/20 rounded-full blur-3xl opacity-40"></div>
+          <div className="absolute bottom-[-80px] left-1/2 w-96 h-96 bg-[#FF7A00]/10 rounded-full blur-3xl opacity-40"></div>
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10 text-center space-y-5">
-          <div className="inline-flex items-center gap-2 bg-white/80 border border-orange-100 text-orange-700 rounded-full px-4 py-2 text-sm font-semibold shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-[#001F3F]/80 border border-[#FF7A00]/10 text-[#FF7A00] rounded-full px-4 py-2 text-sm font-semibold shadow-sm">
             Straightforward, no hidden fees
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-            Choose a plan that <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">moves you forward</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+            Choose a plan that <span className="text-[#FF7A00]">moves you forward</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Flexible engagement models built for speed, clarity, and measurable ROI.
           </p>
         </div>
       </section>
 
       {/* Plans */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-orange-50/30 to-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-[#F2F2F2]/30 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative overflow-hidden rounded-2xl border bg-white transition-all shadow-sm hover:shadow-2xl ${
-                  plan.popular ? 'border-orange-300 shadow-xl' : 'border-orange-100'
+                className={`relative overflow-hidden rounded-2xl border bg-[#001F3F] transition-all shadow-sm hover:shadow-2xl ${
+                  plan.popular ? 'border-[#FF7A00]/30 shadow-xl' : 'border-[#FF7A00]/10'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FF7A00] text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
                     Most popular
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FF7A00]/5 to-transparent"></div>
                 <div className="relative p-8 space-y-6">
                   <div className="space-y-2 text-center">
-                    <h3 className="text-2xl font-bold text-gray-900">{plan.name}</h3>
+                    <h3 className="text-2xl font-bold text-white">{plan.name}</h3>
                     <div className="flex items-baseline justify-center gap-2">
-                      <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
-                      <span className="text-gray-600">{plan.period}</span>
+                      <span className="text-5xl font-bold text-white">{plan.price}</span>
+                      <span className="text-gray-300">{plan.period}</span>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">{plan.description}</p>
+                    <p className="text-gray-300 text-sm leading-relaxed">{plan.description}</p>
                   </div>
 
                   <div className="space-y-3">
                     {plan.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                        <Check className="w-5 h-5 text-[#FF7A00] flex-shrink-0 mt-0.5" />
                         <span className="text-gray-700 leading-relaxed">{feature}</span>
                       </div>
                     ))}
@@ -143,8 +143,8 @@ export default function Pricing({ onNavigate }: PricingProps) {
                     onClick={() => onNavigate('contact')}
                     className={`w-full py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-2 ${
                       plan.popular
-                        ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg hover:shadow-xl'
-                        : 'border-2 border-orange-200 text-orange-700 hover:bg-orange-50'
+                        ? 'bg-[#FF7A00] text-white shadow-lg hover:shadow-xl'
+                        : 'border-2 border-[#FF7A00]/20 text-[#FF7A00] hover:bg-[#FAFAFA]'
                     }`}
                   >
                     Get started
@@ -158,24 +158,24 @@ export default function Pricing({ onNavigate }: PricingProps) {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#001F3F]">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-3">
-            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">
+            <div className="inline-flex items-center gap-2 bg-[#FF7A00]/10 text-[#FF7A00] px-4 py-2 rounded-full text-sm font-semibold">
               FAQs
             </div>
-            <h2 className="text-4xl font-bold text-gray-900">Answers to common questions</h2>
-            <p className="text-lg text-gray-600">Clear, concise details so you can choose with confidence.</p>
+            <h2 className="text-4xl font-bold text-white">Answers to common questions</h2>
+            <p className="text-lg text-gray-300">Clear, concise details so you can choose with confidence.</p>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="rounded-2xl border border-orange-100 bg-white shadow-sm hover:shadow-md transition-all p-6"
+                className="rounded-2xl border border-[#FF7A00]/10 bg-[#001F3F] shadow-sm hover:shadow-md transition-all p-6"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
+                <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -184,29 +184,29 @@ export default function Pricing({ onNavigate }: PricingProps) {
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto relative overflow-hidden rounded-3xl border border-orange-100 bg-gradient-to-r from-orange-50 via-white to-white shadow-xl">
-          <div className="absolute -left-12 top-0 w-48 h-48 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
-          <div className="absolute right-6 -bottom-10 w-52 h-52 bg-orange-200 rounded-full blur-3xl opacity-50"></div>
+        <div className="max-w-5xl mx-auto relative overflow-hidden rounded-3xl border border-[#FF7A00]/10 bg-gradient-to-r from-[#F2F2F2] via-white to-white shadow-xl">
+          <div className="absolute -left-12 top-0 w-48 h-48 bg-[#FF7A00]/10 rounded-full blur-3xl opacity-60"></div>
+          <div className="absolute right-6 -bottom-10 w-52 h-52 bg-[#FF7A00]/20 rounded-full blur-3xl opacity-50"></div>
 
           <div className="relative px-8 py-14 text-center space-y-4">
-            <div className="inline-flex items-center gap-2 bg-white/70 border border-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
+            <div className="inline-flex items-center gap-2 bg-[#001F3F]/70 border border-[#FF7A00]/10 text-[#FF7A00] px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
               Need something custom?
             </div>
-            <h3 className="text-4xl font-bold text-gray-900">Let’s tailor a package for you</h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h3 className="text-4xl font-bold text-white">Let’s tailor a package for you</h3>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Share your goals and constraints—we’ll build a bespoke engagement that fits perfectly.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <button
                 onClick={() => onNavigate('contact')}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+                className="bg-[#FF7A00] text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
               >
                 Talk to our team
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button
                 onClick={() => onNavigate('services')}
-                className="border-2 border-orange-200 text-orange-700 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all"
+                className="border-2 border-[#FF7A00]/20 text-[#FF7A00] px-8 py-4 rounded-xl font-semibold hover:bg-[#FAFAFA] transition-all"
               >
                 Explore services
               </button>
@@ -217,3 +217,8 @@ export default function Pricing({ onNavigate }: PricingProps) {
     </div>
   );
 }
+
+
+
+
+

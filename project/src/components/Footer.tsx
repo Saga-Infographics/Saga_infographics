@@ -8,17 +8,17 @@ export default function Footer({ onNavigate }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 via-gray-900 to-black text-gray-300 relative overflow-hidden">
+    <footer className="bg-[#001F3F] text-gray-300 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-600 to-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute -bottom-80 -left-40 w-80 h-80 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-2000"></div>
+        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-[#FF7A00] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        <div className="absolute -bottom-80 -left-40 w-80 h-80 bg-[#FF7A00] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-2000"></div>
       </div>
 
       {/* Newsletter Section */}
       <div className="relative z-10 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="bg-gradient-to-r from-orange-500/10 to-pink-500/10 border border-orange-500/20 rounded-2xl p-8 backdrop-blur-sm">
+          <div className="bg-[#FF7A00]/10 border border-[#FF7A00]/20 rounded-2xl p-8 backdrop-blur-sm">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-2">Stay Updated</h3>
@@ -28,9 +28,9 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 transition-colors"
+                  className="flex-1 bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#FF7A00]/50 transition-colors"
                 />
-                <button className="group bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-pink-600 transition-all duration-300 flex items-center gap-2">
+                <button className="group bg-[#FF7A00] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#FF7A00]/90 transition-all duration-300 flex items-center gap-2">
                   <span>Subscribe</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -51,7 +51,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 alt="Saga Infographics Logo" 
                 className="w-12 h-12 object-contain"
               />
-              <span className="text-2xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="text-2xl font-black text-white">
                 Saga Infographics
               </span>
             </div>
@@ -71,7 +71,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="group w-11 h-11 bg-gray-800 hover:bg-gradient-to-br hover:from-orange-500 hover:to-pink-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                  className="group w-11 h-11 bg-gray-800 hover:bg-[#FF7A00] rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
                 >
                   <social.icon className="w-5 h-5 group-hover:text-white transition-colors" />
                 </a>
@@ -82,7 +82,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-              <div className="w-1 h-6 bg-gradient-to-b from-orange-500 to-pink-500 rounded-full"></div>
+              <div className="w-1 h-6 bg-[#FF7A00] rounded-full"></div>
               Pages
             </h4>
             <ul className="space-y-3">
@@ -90,9 +90,9 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <li key={item}>
                   <button
                     onClick={() => onNavigate(item.toLowerCase())}
-                    className="text-gray-400 hover:text-orange-500 transition-colors text-sm font-medium group flex items-center gap-2"
+                    className="text-gray-400 hover:text-[#FF7A00] transition-colors text-sm font-medium group flex items-center gap-2"
                   >
-                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <span className="w-1.5 h-1.5 bg-[#FF7A00] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {item}
                   </button>
                 </li>
@@ -103,7 +103,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Services */}
           <div>
             <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-              <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full"></div>
+              <div className="w-1 h-6 bg-[#FF7A00] rounded-full"></div>
               Services
             </h4>
             <ul className="space-y-3">
@@ -117,9 +117,9 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <li key={idx}>
                   <button
                     onClick={() => onNavigate(service.page)}
-                    className="text-gray-400 hover:text-blue-500 transition-colors text-sm font-medium group flex items-center gap-2"
+                    className="text-gray-400 hover:text-[#FF7A00] transition-colors text-sm font-medium group flex items-center gap-2"
                   >
-                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <span className="w-1.5 h-1.5 bg-[#FF7A00] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {service.name}
                   </button>
                 </li>
@@ -130,24 +130,24 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
-              <div className="w-1 h-6 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></div>
+              <div className="w-1 h-6 bg-[#FF7A00] rounded-full"></div>
               Contact
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group cursor-pointer">
-                <Mail className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <a href="mailto:hello@sagainfographics.com" className="text-gray-400 hover:text-orange-500 transition-colors text-sm">
+                <Mail className="w-5 h-5 text-[#FF7A00] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <a href="mailto:hello@sagainfographics.com" className="text-gray-400 hover:text-[#FF7A00] transition-colors text-sm">
                   hello@saga<br />infographics.com
                 </a>
               </li>
               <li className="flex items-start gap-3 group cursor-pointer">
-                <Phone className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <a href="tel:+1234567890" className="text-gray-400 hover:text-orange-500 transition-colors text-sm">
+                <Phone className="w-5 h-5 text-[#FF7A00] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <a href="tel:+1234567890" className="text-gray-400 hover:text-[#FF7A00] transition-colors text-sm">
                   +1 (234) 567-890
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#FF7A00] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm">
                   123 Digital Ave<br />
                   Tech City, TC 12345
@@ -157,12 +157,12 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-br from-orange-500/10 to-pink-500/10 border border-orange-500/20 rounded-2xl p-6 backdrop-blur-sm">
+          <div className="bg-[#FF7A00]/10 border border-[#FF7A00]/20 rounded-2xl p-6 backdrop-blur-sm">
             <h4 className="text-white font-bold mb-4">Ready to Grow?</h4>
             <p className="text-gray-400 text-sm mb-6">Start your transformation journey with us today.</p>
             <button
               onClick={() => onNavigate('contact')}
-              className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 rounded-xl font-bold hover:from-orange-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+              className="w-full bg-[#FF7A00] text-white py-3 rounded-xl font-bold hover:bg-[#FF7A00]/90 transition-all duration-300 transform hover:scale-105"
             >
               Get Started
             </button>
@@ -182,7 +182,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
               <button
                 key={item}
-                className="text-gray-400 hover:text-orange-500 transition-colors font-medium"
+                className="text-gray-400 hover:text-[#FF7A00] transition-colors font-medium"
               >
                 {item}
               </button>
@@ -193,3 +193,4 @@ export default function Footer({ onNavigate }: FooterProps) {
     </footer>
   );
 }
+
