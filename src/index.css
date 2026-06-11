@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+    --color-saga-50: #fff7ed;
+    --color-saga-100: #ffedd5;
+    --color-saga-200: #fed7aa;
+    --color-saga-300: #fdba74;
+    --color-saga-400: #fb923c;
+    --color-saga-500: #f97316;
+    --color-saga-600: #ea580c;
+    --color-saga-700: #c2410c;
+    --color-saga-800: #9a3412;
+    --color-saga-900: #7c2d12;
+    --color-surface: #08080f;
+    --color-surface-100: #0d0d1a;
+    --color-surface-200: #12122a;
+    --color-glass: rgba(255, 255, 255, 0.05);
+    --color-glass-border: rgba(255, 255, 255, 0.1);
+    --font-sans: "Instrument Sans", "SF Pro Display", -apple-system, sans-serif;
+    --animate-float-gentle: float-gentle 6s ease-in-out infinite alternate;
+}
+
+@keyframes float-gentle {
+    0% {
+        translate: 0 0;
+    }
+    100% {
+        translate: 0 -12px;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        translate: -30% 0;
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        translate: 30% 0;
+        opacity: 0.2;
+    }
+}
+
+@keyframes gradientDrift {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 50% 100%;
+    }
+}
+
+@layer base {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+    }
+
+    body {
+        @apply bg-surface text-white font-sans antialiased;
+    }
+
+    ::selection {
+        @apply bg-saga-500/30;
+    }
+}
+
+@layer utilities {
+    .glass {
+        background: var(--color-glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--color-glass-border);
+    }
+
+    .glass-hover {
+        transition: all 0.3s ease;
+    }
+
+    .glass-hover:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-saga-400 via-saga-500 to-saga-600 bg-clip-text text-transparent;
+    }
+
+    .progressive-blur {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        pointer-events: none;
+        z-index: 50;
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(8, 8, 15, 0.4) 30%,
+            rgba(8, 8, 15, 0.7) 60%,
+            rgba(8, 8, 15, 0.95) 100%
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.3) 25%,
+            rgba(0, 0, 0, 0.7) 55%,
+            rgba(0, 0, 0, 1) 100%
+        );
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.3) 25%,
+            rgba(0, 0, 0, 0.7) 55%,
+            rgba(0, 0, 0, 1) 100%
+        );
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+    }
+
+    .progressive-blur::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        backdrop-filter: blur(60px);
+        -webkit-backdrop-filter: blur(60px);
+    }
+
+    .section-padding {
+        @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+    }
+}
+
+@layer components {
+    .gradient-border {
+        position: relative;
+        border-radius: 1rem;
+    }
+
+    .gradient-border::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(
+            135deg,
+            rgba(249, 115, 22, 0.5),
+            rgba(255, 255, 255, 0.1),
+            rgba(249, 115, 22, 0.3)
+        );
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    .glow {
+        box-shadow: 0 0 60px -20px rgba(249, 115, 22, 0.3);
+    }
+
+    .glow-sm {
+        box-shadow: 0 0 30px -15px rgba(249, 115, 22, 0.2);
+    }
+}
