@@ -10,17 +10,37 @@ SvelteKit (Svelte 5 runes) + SSR rewrite of the original React/Vite Saga agency 
 - **shadcn-svelte-style components** in `src/lib/components/ui` (Button, Dialog, Accordion) built on `bits-ui`
 - **@lucide/svelte** icons
 - **gsap** ScrollTrigger for the hero scroll-scale effect (client-only, dynamic import)
-- `@sveltejs/adapter-auto` (Node SSR)
+- `@sveltejs/adapter-node` — builds a standalone Node SSR server (`build/index.js`)
 
 ## Scripts
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build
+npm run build    # -> build/ (Node server)
+npm run start    # node build  (serve the production build)
 npm run preview
 npm run check    # svelte-check / type check
 ```
+
+## Deploying to cPanel (Node.js App / Passenger)
+
+1. Build locally: `npm run build`.
+2. Upload to the server: the `build/` folder, `package.json`, and `package-lock.json`
+   (do **not** upload `node_modules` or `.svelte-kit`).
+3. cPanel → **Setup Node.js App** → *Create Application*:
+   - Node.js version: 20.x
+   - Application root: the folder you uploaded to
+   - Application startup file: `build/index.js`
+4. Click **Run NPM Install** (installs production deps).
+5. Add environment variables:
+   - `NODE_ENV` = `production`
+   - `ORIGIN` = `https://saga.com.np` (your real domain, no trailing slash)
+6. **Restart** the app. cPanel/Passenger proxies the domain to the Node process
+   and picks the port automatically.
+
+To redeploy: rebuild, replace `build/` on the server, re-run NPM Install only if
+dependencies changed, then Restart.
 
 ## Structure
 
