@@ -1,5 +1,5 @@
 node_modules
-/build
+# /build is committed so it can be deployed straight from the repo (cPanel Node.js App)
 /.svelte-kit
 /package
 .env

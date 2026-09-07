@@ -1,0 +1,1 @@
+import{a as e,o as t}from"./CyOXwgr4.js";import"./xihTtKlq.js";import{t as n}from"./Plnzt6Yu.js";var r=new Set([`$$slots`,`$$events`,`$$legacy`]);function i(i,a){let o=e(a,r),s={name:`circle-check-big`,size:24,node:[[`path`,{d:`M21.801 10A10 10 0 1 1 17 3.335`}],[`path`,{d:`m9 11 3 3L22 4`}]],aliases:[`check-circle`]};n(i,t(()=>o,{get icon(){return s}}))}export{i as t};
