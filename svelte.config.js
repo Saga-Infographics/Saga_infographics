@@ -1,13 +1,13 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   preprocess: vitePreprocess(),
   kit: {
-    // Node server output for cPanel "Setup Node.js App" (Passenger).
-    // Build produces build/index.js — set that as the app's startup file.
-    adapter: adapter({ out: 'build' }),
+    // SSR on Cloudflare Pages / Workers.
+    // Build output: .svelte-kit/cloudflare
+    adapter: adapter(),
     alias: {
       '@/*': './src/lib/*'
     }

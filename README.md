@@ -5,42 +5,41 @@ SvelteKit (Svelte 5 runes) + SSR rewrite of the original React/Vite Saga agency 
 ## Stack
 
 - **SvelteKit 2** with server-side rendering (`ssr = true`, no prerender)
+
 - **Svelte 5** runes (`$state`, `$derived`, `$props`)
 - **Tailwind CSS v4** via `@tailwindcss/vite` (`src/app.css`)
 - **shadcn-svelte-style components** in `src/lib/components/ui` (Button, Dialog, Accordion) built on `bits-ui`
 - **@lucide/svelte** icons
 - **gsap** ScrollTrigger for the hero scroll-scale effect (client-only, dynamic import)
-- `@sveltejs/adapter-node` — builds a standalone Node SSR server (`build/index.js`)
+- `@sveltejs/adapter-cloudflare` — SSR on Cloudflare Pages / Workers
 
 ## Scripts
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # -> build/ (Node server)
-npm run start    # node build  (serve the production build)
+npm run build    # -> .svelte-kit/cloudflare/ (_worker.js + assets)
 npm run preview
 npm run check    # svelte-check / type check
 ```
 
-## Deploying to cPanel (Node.js App / Passenger)
+## Deploying to Cloudflare Pages
 
-1. Build locally: `npm run build`.
-2. Upload to the server: the `build/` folder, `package.json`, and `package-lock.json`
-   (do **not** upload `node_modules` or `.svelte-kit`).
-3. cPanel → **Setup Node.js App** → *Create Application*:
-   - Node.js version: 20.x
-   - Application root: the folder you uploaded to
-   - Application startup file: `build/index.js`
-4. Click **Run NPM Install** (installs production deps).
-5. Add environment variables:
-   - `NODE_ENV` = `production`
-   - `ORIGIN` = `https://saga.com.np` (your real domain, no trailing slash)
-6. **Restart** the app. cPanel/Passenger proxies the domain to the Node process
-   and picks the port automatically.
+Connect the repo in the Cloudflare dashboard (Workers & Pages → Create → Pages → Connect to Git):
 
-To redeploy: rebuild, replace `build/` on the server, re-run NPM Install only if
-dependencies changed, then Restart.
+| Setting | Value |
+| --- | --- |
+| Framework preset | SvelteKit |
+| Build command | `npm run build` |
+| Build output directory | `.svelte-kit/cloudflare` |
+| Branch | `sveltekit-rewrite` (or whichever you promote to Production) |
+
+`wrangler.jsonc` in the repo sets `compatibility_date` and enables `nodejs_compat`, and
+declares `pages_build_output_dir`, so the dashboard picks the output directory automatically.
+
+**Build note:** `@rolldown/binding-wasm32-wasi` is pinned in devDependencies as a fallback
+for Vite 8's Rust bundler — Cloudflare's `npm ci` on Linux otherwise trips over
+[npm bug #4828](https://github.com/npm/cli/issues/4828) and can't find the native binding.
 
 ## Structure
 
