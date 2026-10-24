@@ -52,7 +52,9 @@
               <ServiceIcon name={serv.icon} class={`w-6 h-6 ${iconColor[serv.icon] ?? 'text-saga'}`} />
             </div>
 
-            <h2 class="text-2xl font-extrabold text-ink tracking-tight">{serv.title}</h2>
+            <h2 class="text-2xl font-extrabold text-ink tracking-tight">
+              <a href={`/services/${serv.slug}`} class="hover:text-saga">{serv.title}</a>
+            </h2>
 
             <p class="text-sm text-neutral-600 leading-relaxed">{serv.description}</p>
 

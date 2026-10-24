@@ -176,7 +176,7 @@
                 <ul class="space-y-2 text-xs font-medium text-neutral-400">
                     <li>
                         <a
-                            href="/services#youtube-shorts"
+                            href="/services/youtube-shorts"
                             class="hover:text-white transition-colors"
                         >
                             YouTube Shorts Editing
@@ -184,7 +184,7 @@
                     </li>
                     <li>
                         <a
-                            href="/services#instagram-reels"
+                            href="/services/instagram-reels"
                             class="hover:text-white transition-colors"
                         >
                             Instagram Reels Virality
@@ -192,7 +192,7 @@
                     </li>
                     <li>
                         <a
-                            href="/services#tiktok-videos"
+                            href="/services/tiktok-videos"
                             class="hover:text-white transition-colors"
                         >
                             TikTok Video Production
@@ -200,7 +200,7 @@
                     </li>
                     <li>
                         <a
-                            href="/services#video-edits"
+                            href="/services/video-edits"
                             class="hover:text-white transition-colors"
                         >
                             Video Edits & Content Creation
@@ -208,7 +208,7 @@
                     </li>
                     <li>
                         <a
-                            href="/services#motion-graphics"
+                            href="/services/motion-graphics"
                             class="hover:text-white transition-colors"
                         >
                             2D/3D Motion Graphics
@@ -216,7 +216,7 @@
                     </li>
                     <li>
                         <a
-                            href="/services#web-development"
+                            href="/services/web-development"
                             class="hover:text-white transition-colors"
                         >
                             React & Next.js Development

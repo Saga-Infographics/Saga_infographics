@@ -62,7 +62,7 @@
 
           <div class="mt-8 pt-4 border-t border-neutral-100 flex items-center justify-between">
             <a
-              href={`/services#${service.slug}`}
+              href={`/services/${service.slug}`}
               class="text-xs font-bold text-ink group-hover:text-saga inline-flex items-center gap-1 transition-colors"
             >
               Explore Service <ArrowUpRight class="w-3.5 h-3.5" />

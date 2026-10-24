@@ -133,6 +133,13 @@ export const SERVICES: ServiceItem[] = [
     badgeBg: 'bg-[#FF0000]/10',
     badgeTextColor: 'text-[#FF0000]',
     features: ['Custom Animated Captions', 'Hook Optimization', 'Sound Effects & B-Roll', '48h Delivery'],
+    seo: {
+      title: 'YouTube Shorts Editing Service | Saga, Nepal',
+      description: 'Saga turns long videos and podcasts into high-retention YouTube Shorts with animated captions, hooks and sound design. 48-hour delivery.',
+      h1: 'YouTube Shorts Editing for Creators & Brands',
+      paragraphs: ['We repurpose long-form videos, podcasts and raw footage into vertical YouTube Shorts built around the first three seconds, where most viewers decide to stay or swipe.', 'Every Short gets animated captions, a tested hook, sound effects and B-roll, so a single upload can feed a daily Shorts schedule.'],
+      steps: ['Send your long video or raw clips', 'We cut hooks, captions and pacing', 'Review the draft on Slack', 'Receive final Shorts within 48 hours']
+    },
     slug: 'youtube-shorts'
   },
   {
@@ -144,6 +151,13 @@ export const SERVICES: ServiceItem[] = [
     badgeBg: 'bg-[#E1306C]/10',
     badgeTextColor: 'text-[#E1306C]',
     features: ['Trending Music Overlay', 'Color Grading', 'Native Text Styling', 'Hashtag Strategy'],
+    seo: {
+      title: 'Instagram Reels Editing Service | Saga, Nepal',
+      description: 'Trend-aware Instagram Reels editing with color grading, native text styling and music overlays. Reels delivered in 48 hours.',
+      h1: 'Instagram Reels Editing That Fits the Algorithm',
+      paragraphs: ['Our editors craft fast-paced, aesthetic Reels designed for how Instagram recommends content: strong opening frames, clean text and music that matches current trends.', 'We handle color grading, native-style text and hashtag strategy, so your Reels look consistent with your brand.'],
+      steps: ['Share your footage and brand references', 'We edit with trending audio and styling', 'Review and request changes', 'Receive final Reels within 48 hours']
+    },
     slug: 'instagram-reels'
   },
   {
@@ -154,6 +168,13 @@ export const SERVICES: ServiceItem[] = [
     badgeBg: 'bg-[#000000]/10',
     badgeTextColor: 'text-[#121212]',
     features: ['Pattern Interrupts', 'Fast Cuts & Zoom Effects', 'Trending Sounds', 'CTA Overlays'],
+    seo: {
+      title: 'TikTok Video Editing Service | Saga, Nepal',
+      description: 'High-energy TikTok video editing with pattern interrupts, fast cuts and trending sounds. Native-feeling edits delivered in 48 hours.',
+      h1: 'TikTok Video Editing Built to Hold Attention',
+      paragraphs: ['TikTok rewards videos people watch past the first few seconds. We edit with pattern interrupts, fast cuts, zoom effects and trending sounds to keep viewers watching.', 'The result feels native to the platform, not like a repurposed horizontal video, and ends with a clear call-to-action overlay.'],
+      steps: ['Send raw footage or a long video', 'We cut for pace and retention', 'Review the draft with direct feedback', 'Receive final TikToks within 48 hours']
+    },
     slug: 'tiktok-videos'
   },
   {
@@ -165,6 +186,13 @@ export const SERVICES: ServiceItem[] = [
     badgeBg: 'bg-[#FF4D23]/10',
     badgeTextColor: 'text-[#FF4D23]',
     features: ['Full Video Editing', 'Storyboarding', 'Sound Design & Mixing', 'Dedicated Editor'],
+    seo: {
+      title: 'Video Editing & Content Creation Services | Saga',
+      description: 'End-to-end video post-production for brands, agencies, course creators and founders: editing, storyboarding and sound design.',
+      h1: 'Video Editing & Content Creation for Brands and Creators',
+      paragraphs: ['Saga provides full video post-production for brands, agencies, course creators and founder-led channels, from storyboarding through final export.', 'You get a dedicated editor who learns your style, plus sound design and mixing, so your content stays consistent as volume grows.'],
+      steps: ['Brief us on goals and style', 'We storyboard and edit', 'Review rounds with your dedicated editor', 'Receive final delivery with sound mixed']
+    },
     slug: 'video-edits'
   },
   {
@@ -176,6 +204,13 @@ export const SERVICES: ServiceItem[] = [
     badgeBg: 'bg-[#FF4D23]/10',
     badgeTextColor: 'text-[#FF4D23]',
     features: ['Logo Animation', 'Custom UI Mockups', 'Infographic Motion', 'After Effects Masters'],
+    seo: {
+      title: 'Motion Graphics & Animation Design | Saga, Nepal',
+      description: "2D/3D motion graphics, kinetic typography, logo animation and infographic motion built in After Effects by Saga's Kathmandu team.",
+      h1: 'Motion Graphics & Animation Design',
+      paragraphs: ['We produce 2D and 3D motion graphics, kinetic typography, lower thirds and logo animations that make videos and product stories clearer and more memorable.', 'Our team works in After Effects, and also builds animated UI mockups and infographic motion for explainers and ads.'],
+      steps: ['Share your brand assets and concept', 'We storyboard and animate', 'Review and refine', 'Receive final files in the formats you need']
+    },
     slug: 'motion-graphics'
   },
   {
@@ -187,6 +222,13 @@ export const SERVICES: ServiceItem[] = [
     badgeBg: 'bg-[#2563EB]/10',
     badgeTextColor: 'text-[#2563EB]',
     features: ['React & Tailwind CSS', 'SEO & Speed Optimized', 'CMS Integration', 'Responsive Design'],
+    seo: {
+      title: 'React & Next.js Web Development Agency | Saga, Nepal',
+      description: 'Saga builds fast, SEO-friendly React and Next.js websites with Tailwind CSS, CMS integration and responsive design.',
+      h1: 'React & Next.js Web Development',
+      paragraphs: ['We build high-performance websites and digital products with React and Next.js, with responsive layouts, smooth motion and fast load times.', 'Sites ship SEO-ready with CMS integration where you need it, so your team can update content without a developer.'],
+      steps: ['Discuss scope and goals', 'Design and build', 'Review on a staging site', 'Launch and handoff']
+    },
     slug: 'web-development'
   }
 ];

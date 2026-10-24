@@ -7,6 +7,15 @@ export interface ServiceItem {
   badgeTextColor: string;
   features: string[];
   slug: string;
+  seo?: ServiceSeo;
+}
+
+export interface ServiceSeo {
+  title: string;
+  description: string;
+  h1: string;
+  paragraphs: string[];
+  steps: string[];
 }
 
 export interface WorkItem {
