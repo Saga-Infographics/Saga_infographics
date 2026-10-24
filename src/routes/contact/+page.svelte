@@ -2,17 +2,35 @@
   import { Mail, Phone, MapPin, Send, CircleCheckBig as CheckCircle2, Clock } from '@lucide/svelte';
 
   let submitted = $state(false);
+  let submitting = $state(false);
+  let errored = $state(false);
   let formData = $state({
     name: '',
     email: '',
     phone: '',
     subject: 'Video Editing Enquiry',
-    message: ''
+    message: '',
+    website: '' // honeypot
   });
 
-  function handleSubmit(e: SubmitEvent) {
+  async function handleSubmit(e: SubmitEvent) {
     e.preventDefault();
-    submitted = true;
+    if (submitting) return;
+    submitting = true;
+    errored = false;
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'contact', ...formData })
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      submitted = true;
+    } catch {
+      errored = true;
+    } finally {
+      submitting = false;
+    }
   }
 
   const inputClass =
@@ -200,11 +218,29 @@
                 ></textarea>
               </div>
 
+              <input
+                type="text"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+                class="hidden"
+                bind:value={formData.website}
+              />
+
+              {#if errored}
+                <p class="text-xs text-red-600 bg-red-50 border border-red-200 rounded-xl p-3">
+                  Something went wrong sending your message. Please try again, or email us at
+                  <a href="mailto:info@saga.com.np" class="font-bold underline">info@saga.com.np</a>.
+                </p>
+              {/if}
+
               <button
                 type="submit"
-                class="w-full bg-saga hover:bg-saga-dark text-white text-xs sm:text-sm font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer"
+                disabled={submitting}
+                class="disabled:opacity-60 disabled:cursor-not-allowed w-full bg-saga hover:bg-saga-dark text-white text-xs sm:text-sm font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer"
               >
-                Send Direct Message <Send class="w-4 h-4" />
+                {submitting ? 'Sending…' : 'Send Direct Message'} <Send class="w-4 h-4" />
               </button>
             </form>
           {/if}

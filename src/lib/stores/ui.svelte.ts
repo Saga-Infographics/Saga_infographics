@@ -9,6 +9,8 @@ class UIState {
   calculatorOpen = $state(false);
   showreelOpen = $state(false);
   selectedWork = $state<WorkItem | null>(null);
+  /** Price-calculator estimate carried into the booking form. */
+  quote = $state('');
 
   openBooking = () => {
     this.calculatorOpen = false;
@@ -18,6 +20,7 @@ class UIState {
 
   closeBooking = () => {
     this.bookingOpen = false;
+    this.quote = '';
   };
 
   openCalculator = () => {

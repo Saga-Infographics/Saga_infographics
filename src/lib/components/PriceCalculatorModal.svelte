@@ -150,6 +150,7 @@
 
         <button
           onclick={() => {
+            ui.quote = `NPR ${Math.round(totalEstimate).toLocaleString('en-IN')} / month (${videoCount} videos, ${turnaround} turnaround${addThumbnails ? ', thumbnails' : ''}${addWebPage ? ', web page' : ''}${addMotion3D ? ', motion/3D' : ''})`;
             ui.closeCalculator();
             ui.openBooking();
           }}

@@ -23,6 +23,14 @@ npm run preview
 npm run check    # svelte-check / type check
 ```
 
+## Form emails (SMTP)
+
+The contact form and the booking modal (also used by the price calculator) POST to
+`/api/enquiry`, which emails the admin over SMTP using `worker-mailer` (Cloudflare TCP sockets).
+Set these variables (see `.env.example`; in Cloudflare: Settings → Variables and Secrets,
+store `SMTP_PASS` as a secret): `SMTP_HOST`, `SMTP_PORT` (465 = TLS, 587 = STARTTLS),
+`SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`, `MAIL_TO` (comma-separated).
+
 ## Deploying to Cloudflare Pages
 
 Connect the repo in the Cloudflare dashboard (Workers & Pages → Create → Pages → Connect to Git):

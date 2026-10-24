@@ -13,7 +13,8 @@
     service: 'Reels & Short-Form Video',
     budget: 'NPR 15,000 - 40,000 / mo',
     date: 'Tomorrow at 3:00 PM',
-    notes: ''
+    notes: '',
+    website: '' // honeypot
   });
 
   const slots = [
@@ -23,39 +24,19 @@
     'Friday at 11:00 AM'
   ];
 
-  // Google Form: "Saga inquiry" — https://forms.gle/asshRjytmRnHGpAZ6
-  const GOOGLE_FORM_ACTION =
-    'https://docs.google.com/forms/d/e/1FAIpQLSfzwhhqDaHXmaor9fKvNIjwQTxUvsqfbRprtJdrSGZrGbu0RQ/formResponse';
-  const GOOGLE_FORM_VIEW = 'https://forms.gle/asshRjytmRnHGpAZ6';
-  const FIELDS = {
-    name: 'entry.1441307543',
-    email: 'entry.1607432832',
-    service: 'entry.1273857214',
-    budget: 'entry.1252677628',
-    date: 'entry.912286856',
-    notes: 'entry.1373253150'
-  };
-
   async function handleSubmit(e: SubmitEvent) {
     e.preventDefault();
     if (submitting) return;
     submitting = true;
     errored = false;
 
-    const body = new URLSearchParams();
-    body.set(FIELDS.name, formData.name);
-    body.set(FIELDS.email, formData.email);
-    body.set(FIELDS.service, formData.service);
-    body.set(FIELDS.budget, formData.budget);
-    body.set(FIELDS.date, formData.date);
-    body.set(FIELDS.notes, formData.notes);
-    body.set('fvv', '1');
-    body.set('pageHistory', '0');
-
     try {
-      // Google Forms sends no CORS headers, so the response is opaque —
-      // a resolved promise means the request was delivered.
-      await fetch(GOOGLE_FORM_ACTION, { method: 'POST', mode: 'no-cors', body });
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'booking', ...formData, quote: ui.quote })
+      });
+      if (!res.ok) throw new Error(String(res.status));
       submitted = true;
       setTimeout(() => ui.closeBooking(), 3200);
     } catch {
@@ -114,6 +95,15 @@
         </Dialog.Description>
 
         <form onsubmit={handleSubmit} class="space-y-4">
+          <input
+            type="text"
+            name="website"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            class="hidden"
+            bind:value={formData.website}
+          />
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label for="bm-name" class="block text-xs font-bold text-neutral-800 mb-1">
@@ -205,13 +195,8 @@
 
           {#if errored}
             <p class="text-xs text-red-600 bg-red-50 border border-red-200 rounded-xl p-3">
-              Something went wrong sending your request. Please try again, or
-              <a
-                href={GOOGLE_FORM_VIEW}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-bold underline">fill in the form directly</a
-              >.
+              Something went wrong sending your request. Please try again, or email us at
+              <a href="mailto:info@saga.com.np" class="font-bold underline">info@saga.com.np</a>.
             </p>
           {/if}
 
