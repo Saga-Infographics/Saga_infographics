@@ -376,26 +376,26 @@ export const MEGA_MENU_ITEMS: MegaMenuItem[] = [
   {
     title: 'Short-Form Video Editing',
     description: 'TikTok, Reels, and Shorts edited to hook viewers & go viral',
-    path: '/services#youtube-shorts',
+    path: '/services/youtube-shorts',
     badge: 'Popular',
     iconName: 'Play'
   },
   {
     title: 'Web Engineering',
     description: 'Modern React & Tailwind sites designed for high conversion',
-    path: '/services#web-development',
+    path: '/services/web-development',
     iconName: 'Code'
   },
   {
     title: 'UI/UX & Product Design',
     description: 'Sleek app interfaces and visual design systems',
-    path: '/services#ui-ux',
+    path: '/services',
     iconName: 'Layout'
   },
   {
     title: 'Motion & 3D Graphics',
     description: 'Kinetic typography, animated logos, and lower thirds',
-    path: '/services#motion-graphics',
+    path: '/services/motion-graphics',
     iconName: 'Sparkles'
   },
   // Work page hidden for now
