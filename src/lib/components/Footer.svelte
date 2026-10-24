@@ -145,6 +145,13 @@
                             >Pricing & Plans</a
                         >
                     </li>
+                    <li>
+                        <a
+                            href="/blog"
+                            class="hover:text-white transition-colors"
+                            >Blog</a
+                        >
+                    </li>
                 </ul>
 
                 <h4

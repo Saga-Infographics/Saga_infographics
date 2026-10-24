@@ -114,3 +114,69 @@
 .accordion-content[data-state='closed'] {
   animation: accordion-up 0.2s ease-out;
 }
+
+/* Blog post body (rendered markdown) */
+.prose-saga {
+  color: #404040;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.prose-saga h2 {
+  color: #121212;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 2.2rem 0 0.8rem;
+}
+.prose-saga h3 {
+  color: #121212;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1.6rem 0 0.6rem;
+}
+.prose-saga p {
+  margin: 0 0 1.1rem;
+}
+.prose-saga ul,
+.prose-saga ol {
+  margin: 0 0 1.2rem 1.4rem;
+}
+.prose-saga ul {
+  list-style: disc;
+}
+.prose-saga ol {
+  list-style: decimal;
+}
+.prose-saga li {
+  margin-bottom: 0.4rem;
+}
+.prose-saga a {
+  color: #ff4d23;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.prose-saga strong {
+  color: #121212;
+}
+.prose-saga blockquote {
+  border-left: 3px solid #ff4d23;
+  padding-left: 1rem;
+  color: #525252;
+  margin: 1.2rem 0;
+}
+.prose-saga table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0 1.6rem;
+  font-size: 0.9rem;
+}
+.prose-saga th,
+.prose-saga td {
+  border: 1px solid #e5e5e5;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+.prose-saga th {
+  background: #fff;
+  color: #121212;
+}

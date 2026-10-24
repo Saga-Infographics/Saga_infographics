@@ -72,7 +72,8 @@
     { href: '/about', label: 'About' },
     // { href: '/work', label: 'Work' },
     { href: '/services', label: 'Service' },
-    { href: '/pricing', label: 'Pricing' }
+    { href: '/pricing', label: 'Pricing' },
+    { href: '/blog', label: 'Blog' }
   ];
 
   const mobileLinks = [
@@ -81,6 +82,7 @@
     // { href: '/work', label: 'Our Works & Case Studies' },
     { href: '/services', label: 'Services & Editing' },
     { href: '/pricing', label: 'Pricing & Plans' },
+    { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact Agency' }
   ];
 </script>
