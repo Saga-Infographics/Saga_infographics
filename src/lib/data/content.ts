@@ -29,7 +29,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     description:
       'We maintain a bench of pre-vetted video editors and creators ready to be trained and assigned to your account within 48 hours.',
     imageUrl:
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=65&w=640&auto=format&fit=crop',
     alt: 'Recording raw footage on phone'
   },
   {
@@ -38,7 +38,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     description:
       'No delays, no guesswork—our team of video editors & motion designers is vetted, trained, and ready to transform your brand content.',
     imageUrl:
-      'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=65&w=640&auto=format&fit=crop',
     alt: 'Editing video in studio workspace'
   },
   {
@@ -47,7 +47,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     description:
       'Streamline your content engine with pre-qualified editors, tailored hook optimization, and fast turnaround to trigger viral growth.',
     imageUrl:
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=65&w=640&auto=format&fit=crop',
     alt: 'Reviewing analytics on laptop'
   }
 ];
@@ -59,7 +59,7 @@ export const WORK_ITEMS: WorkItem[] = [
     clientHandle: '@wellnesscoach;',
     category: 'reels',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=65&w=480&auto=format&fit=crop',
     videoUrl:
       'https://assets.mixkit.co/videos/preview/mixkit-man-holding-a-phone-and-looking-at-it-41559-large.mp4',
     metric: 'Gained 18.4K followers from this reel',
@@ -74,7 +74,7 @@ export const WORK_ITEMS: WorkItem[] = [
     clientHandle: '@lifestyle_smma;',
     category: 'reels',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=65&w=480&auto=format&fit=crop',
     videoUrl:
       'https://assets.mixkit.co/videos/preview/mixkit-young-woman-working-on-her-laptop-in-a-coffee-shop-42617-large.mp4',
     metric: 'I gained 10K Followers in the last month',
@@ -89,7 +89,7 @@ export const WORK_ITEMS: WorkItem[] = [
     clientHandle: '@techunboxed_official;',
     category: 'reels',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=65&w=480&auto=format&fit=crop',
     metric: 'Gained 2.4M organic views in 7 days',
     platform: 'tiktok',
     description:
@@ -102,7 +102,7 @@ export const WORK_ITEMS: WorkItem[] = [
     clientHandle: '@wellnesscoach;',
     category: 'reels',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=65&w=480&auto=format&fit=crop',
     metric: 'Gained 14K followers from this reel',
     platform: 'instagram',
     description: 'Engaging lifestyle showcase driving 4.2x ROAS on Meta ads campaign.',
@@ -114,7 +114,7 @@ export const WORK_ITEMS: WorkItem[] = [
     clientHandle: '@creator_mindset;',
     category: 'reels',
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=65&w=480&auto=format&fit=crop',
     metric: 'Gained 45K subscribers in 60 days',
     platform: 'youtube',
     description:

@@ -84,8 +84,12 @@
         class="rounded-[28px] overflow-hidden border border-neutral-200 shadow-xl aspect-[4/3] bg-neutral-900 relative group"
       >
         <img
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=65&w=640&auto=format&fit=crop"
           alt="Saga Nepal Team Studio"
+          width="640"
+          height="480"
+          loading="lazy"
+          decoding="async"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div
