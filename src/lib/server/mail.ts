@@ -1,13 +1,15 @@
 import * as env from '$app/env/private';
 
-export type AdminMail = {
+export type Mail = {
+  /** Defaults to the admin recipients in MAIL_TO. */
+  to?: string[];
   subject: string;
   text: string;
   replyTo?: { name?: string; email: string };
 };
 
-/** Send a plain-text notification to the admin over SMTP (Cloudflare TCP sockets). */
-export async function sendAdminMail({ subject, text, replyTo }: AdminMail) {
+/** Send a plain-text email over SMTP (Cloudflare TCP sockets). Goes to the admin unless `to` is set. */
+export async function sendMail({ to, subject, text, replyTo }: Mail) {
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_FROM, MAIL_TO } = env;
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !MAIL_TO) {
     throw new Error('SMTP is not configured');
@@ -27,7 +29,7 @@ export async function sendAdminMail({ subject, text, replyTo }: AdminMail) {
     },
     {
       from: { name: 'Saga Website', email: MAIL_FROM ?? SMTP_USER },
-      to: MAIL_TO.split(',').map((e) => e.trim()),
+      to: to ?? MAIL_TO.split(',').map((e) => e.trim()),
       reply: replyTo,
       subject,
       text

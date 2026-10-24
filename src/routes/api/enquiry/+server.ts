@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { sendAdminMail } from '#lib/server/mail';
+import { sendMail } from '#lib/server/mail';
 
 const LABELS: Record<string, Record<string, string>> = {
   contact: {
@@ -22,6 +22,18 @@ const LABELS: Record<string, Record<string, string>> = {
 const TITLES: Record<string, string> = {
   contact: 'New contact form message',
   booking: 'New strategy call booking'
+};
+
+const CONFIRMATIONS: Record<string, { subject: string; intro: string }> = {
+  contact: {
+    subject: 'We received your message — Saga Infographics',
+    intro: "Thanks for reaching out to Saga. We've received your message and our team will reply within one business day."
+  },
+  booking: {
+    subject: 'We received your call request — Saga Infographics',
+    intro:
+      "Thanks for booking a discovery call with Saga. We've received your request and will email you shortly to confirm the time."
+  }
 };
 
 const clean = (v: unknown, max: number) =>
@@ -61,7 +73,7 @@ export const POST = async ({ request }) => {
     .join('\n');
 
   try {
-    await sendAdminMail({
+    await sendMail({
       subject: `[Saga] ${TITLES[type]} — ${oneLine(values.name)}`,
       text,
       replyTo: { name: oneLine(values.name), email: values.email }
@@ -69,6 +81,18 @@ export const POST = async ({ request }) => {
   } catch (err) {
     console.error('enquiry mail failed', err);
     return json({ error: 'Could not send your message' }, { status: 502 });
+  }
+
+  // Confirmation to the visitor. The admin already has the enquiry, so a failure here is not fatal.
+  const confirmation = CONFIRMATIONS[type];
+  try {
+    await sendMail({
+      to: [values.email],
+      subject: confirmation.subject,
+      text: `Hi ${oneLine(values.name)},\n\n${confirmation.intro}\n\nHere is a copy of what you sent us:\n\n${text}\n\n— Saga Infographics\nhttps://saga.com.np`
+    });
+  } catch (err) {
+    console.error('confirmation mail failed', err);
   }
   return json({ ok: true });
 };
