@@ -12,10 +12,10 @@
 </script>
 
 <svelte:head>
-  <title>Saga Infographics — Creative & Digital Agency</title>
+  <title>Viral Reels & YouTube Shorts Editing Agency | Saga, Nepal</title>
   <meta
     name="description"
-    content="Saga is a digital & creative agency: viral short-form video editing, YouTube Shorts, Instagram Reels, motion graphics, and high-performance web engineering."
+    content="Saga edits YouTube Shorts, Instagram Reels and TikTok videos with a 48-hour turnaround, plus React/Next.js web development, for creators and brands."
   />
 </svelte:head>
 

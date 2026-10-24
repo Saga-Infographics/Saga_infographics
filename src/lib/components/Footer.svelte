@@ -200,6 +200,14 @@
                     </li>
                     <li>
                         <a
+                            href="/services#video-edits"
+                            class="hover:text-white transition-colors"
+                        >
+                            Video Edits & Content Creation
+                        </a>
+                    </li>
+                    <li>
+                        <a
                             href="/services#motion-graphics"
                             class="hover:text-white transition-colors"
                         >

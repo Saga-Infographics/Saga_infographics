@@ -3,6 +3,7 @@
   import { CircleCheckBig as CheckCircle2, ArrowUpRight, Sparkles, Calculator } from '@lucide/svelte';
   import { ui } from '$lib/stores/ui.svelte';
 
+  let { asH1 = false }: { asH1?: boolean } = $props();
   let isYearly = $state(false);
 </script>
 
@@ -15,10 +16,13 @@
         [ PRICING ]
       </div>
 
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink tracking-tight">
+      <svelte:element
+        this={asH1 ? 'h1' : 'h2'}
+        class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink tracking-tight"
+      >
         Pay monthly or
         <span class="font-serif-italic text-saga font-normal">pay as you need</span>
-      </h2>
+      </svelte:element>
       <p class="mt-3 text-sm text-neutral-600 font-medium">
         No long-term lock-in. Scale up, pause, or cancel anytime.
       </p>
