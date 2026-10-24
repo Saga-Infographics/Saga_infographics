@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { FAQS } from '$lib/data/content';
+  import { FAQS } from '#lib/data/content';
   import { Plus, Minus } from '@lucide/svelte';
-  import * as Accordion from '$lib/components/ui/accordion';
+  import * as Accordion from '#lib/components/ui/accordion';
 
   let value = $state<string>('f1');
 </script>

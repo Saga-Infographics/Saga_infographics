@@ -1,7 +1,7 @@
 <script lang="ts">
-  import * as Dialog from '$lib/components/ui/dialog';
+  import * as Dialog from '#lib/components/ui/dialog';
   import { X } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 </script>
 
 <Dialog.Root bind:open={ui.showreelOpen}>

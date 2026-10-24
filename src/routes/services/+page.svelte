@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { SERVICES } from '$lib/data/content';
-  import ServiceIcon from '$lib/components/ServiceIcon.svelte';
+  import { SERVICES } from '#lib/data/content';
+  import ServiceIcon from '#lib/components/ServiceIcon.svelte';
   import { CircleCheckBig as CheckCircle2, ArrowUpRight } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   const iconColor: Record<string, string> = {
     Youtube: 'text-[#FF0000]',

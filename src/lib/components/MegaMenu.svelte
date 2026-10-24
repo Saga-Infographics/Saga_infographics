@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { MEGA_MENU_ITEMS } from '$lib/data/content';
-  import { getIcon } from '$lib/components/icons';
+  import { MEGA_MENU_ITEMS } from '#lib/data/content';
+  import { getIcon } from '#lib/components/icons';
   import { ArrowUpRight, CircleCheckBig as CheckCircle2 } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   let {
     isOpen = false,

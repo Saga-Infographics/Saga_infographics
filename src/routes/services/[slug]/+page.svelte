@@ -1,8 +1,8 @@
 <script lang="ts">
   import { CircleCheckBig as CheckCircle2, ArrowUpRight, ArrowLeft } from '@lucide/svelte';
-  import ServiceIcon from '$lib/components/ServiceIcon.svelte';
-  import { SERVICES } from '$lib/data/content';
-  import { ui } from '$lib/stores/ui.svelte';
+  import ServiceIcon from '#lib/components/ServiceIcon.svelte';
+  import { SERVICES } from '#lib/data/content';
+  import { ui } from '#lib/stores/ui.svelte';
 
   let { data } = $props();
   const service = $derived(data.service);

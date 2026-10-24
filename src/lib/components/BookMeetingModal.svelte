@@ -1,7 +1,7 @@
 <script lang="ts">
-  import * as Dialog from '$lib/components/ui/dialog';
+  import * as Dialog from '#lib/components/ui/dialog';
   import { CircleCheckBig as CheckCircle2, Sparkles, Send } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   let submitting = $state(false);
   let submitted = $state(false);

@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { SERVICES } from '$lib/data/content';
+import { SERVICES } from '#lib/data/content';
 
 export const load = ({ params }) => {
   const service = SERVICES.find((s) => s.slug === params.slug);

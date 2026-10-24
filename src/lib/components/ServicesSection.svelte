@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { SERVICES } from '$lib/data/content';
-  import ServiceIcon from '$lib/components/ServiceIcon.svelte';
+  import { SERVICES } from '#lib/data/content';
+  import ServiceIcon from '#lib/components/ServiceIcon.svelte';
   import { CircleCheckBig as CheckCircle2, ArrowUpRight } from '@lucide/svelte';
 
   const iconColor: Record<string, string> = {

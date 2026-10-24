@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { TESTIMONIALS } from '$lib/data/content';
+  import { TESTIMONIALS } from '#lib/data/content';
   import { ChevronLeft, ChevronRight, Star, Play, Quote, TrendingUp } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   let currentIndex = $state(0);
   const current = $derived(TESTIMONIALS[currentIndex]);

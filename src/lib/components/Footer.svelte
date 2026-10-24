@@ -1,8 +1,8 @@
 <script lang="ts">
     import { ArrowUpRight, Mail, MapPin, Phone } from "@lucide/svelte";
-    import BrandIcon from "$lib/components/BrandIcon.svelte";
-    import { PRODUCTS } from "$lib/data/content";
-    import { ui } from "$lib/stores/ui.svelte";
+    import BrandIcon from "#lib/components/BrandIcon.svelte";
+    import { PRODUCTS } from "#lib/data/content";
+    import { ui } from "#lib/stores/ui.svelte";
 
     const year = new Date().getFullYear();
 

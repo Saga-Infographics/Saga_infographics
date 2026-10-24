@@ -1,8 +1,8 @@
 <script lang="ts">
-  import * as Dialog from '$lib/components/ui/dialog';
+  import * as Dialog from '#lib/components/ui/dialog';
   import { TrendingUp, Play, CircleCheckBig as CheckCircle2, ArrowUpRight } from '@lucide/svelte';
-  import BrandIcon from '$lib/components/BrandIcon.svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import BrandIcon from '#lib/components/BrandIcon.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   const work = $derived(ui.selectedWork);
 

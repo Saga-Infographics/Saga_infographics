@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ArrowUpRight, DollarSign, Clock, Award, ShieldCheck } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   const cards = [
     {

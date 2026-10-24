@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { PRICING_PLANS } from '$lib/data/content';
+  import { PRICING_PLANS } from '#lib/data/content';
   import { CircleCheckBig as CheckCircle2, ArrowUpRight, Sparkles, Calculator } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   let { asH1 = false }: { asH1?: boolean } = $props();
   let isYearly = $state(false);

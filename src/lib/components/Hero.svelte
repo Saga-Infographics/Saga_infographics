@@ -1,8 +1,8 @@
 <script lang="ts">
   // import { onMount } from 'svelte';
   import { ArrowUpRight, Flame, ShieldCheck, Zap } from '@lucide/svelte';
-  import BrandIcon from '$lib/components/BrandIcon.svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import BrandIcon from '#lib/components/BrandIcon.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   let heroRef: HTMLElement;
 

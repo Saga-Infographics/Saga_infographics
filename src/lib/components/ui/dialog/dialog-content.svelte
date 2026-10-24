@@ -3,7 +3,7 @@
   import XIcon from '@lucide/svelte/icons/x';
   import type { Snippet } from 'svelte';
   import DialogOverlay from './dialog-overlay.svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils';
 
   let {
     ref = $bindable(null),

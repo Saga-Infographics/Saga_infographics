@@ -2,14 +2,14 @@
   import '../app.css';
   import { page } from '$app/state';
   import { afterNavigate } from '$app/navigation';
-  import Navbar from '$lib/components/Navbar.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import BookMeetingModal from '$lib/components/BookMeetingModal.svelte';
-  // import WorkDetailModal from '$lib/components/WorkDetailModal.svelte';
-  import PriceCalculatorModal from '$lib/components/PriceCalculatorModal.svelte';
+  import Navbar from '#lib/components/Navbar.svelte';
+  import Footer from '#lib/components/Footer.svelte';
+  import BookMeetingModal from '#lib/components/BookMeetingModal.svelte';
+  // import WorkDetailModal from '#lib/components/WorkDetailModal.svelte';
+  import PriceCalculatorModal from '#lib/components/PriceCalculatorModal.svelte';
   // Showreel modal is only opened from the hero video player / testimonials,
   // both of which are currently commented out.
-  // import ShowreelModal from '$lib/components/ShowreelModal.svelte';
+  // import ShowreelModal from '#lib/components/ShowreelModal.svelte';
 
   let { children } = $props();
 

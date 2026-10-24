@@ -1,4 +1,4 @@
-import type { WorkItem } from '$lib/types';
+import type { WorkItem } from '#lib/types';
 
 /**
  * Global UI state for the modals that live once in the root layout.

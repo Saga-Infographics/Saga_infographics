@@ -4,8 +4,8 @@
   import { afterNavigate } from '$app/navigation';
   import { ChevronDown, ArrowUpRight, ExternalLink, Menu, X } from '@lucide/svelte';
   import MegaMenu from './MegaMenu.svelte';
-  import { PRODUCTS } from '$lib/data/content';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { PRODUCTS } from '#lib/data/content';
+  import { ui } from '#lib/stores/ui.svelte';
 
   let megaOpen = $state(false);
   let productsOpen = $state(false);

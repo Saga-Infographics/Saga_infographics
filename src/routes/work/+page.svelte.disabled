@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { WORK_ITEMS } from '$lib/data/content';
+  import { WORK_ITEMS } from '#lib/data/content';
   import { Play, TrendingUp, Search } from '@lucide/svelte';
-  import BrandIcon from '$lib/components/BrandIcon.svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import BrandIcon from '#lib/components/BrandIcon.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   let selectedCategory = $state('all');
   let searchQuery = $state('');

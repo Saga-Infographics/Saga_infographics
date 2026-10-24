@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { PROCESS_STEPS } from '$lib/data/content';
+  import { PROCESS_STEPS } from '#lib/data/content';
   import { ArrowUpRight } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 </script>
 
 <section class="py-20 bg-canvas">

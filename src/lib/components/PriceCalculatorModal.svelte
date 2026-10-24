@@ -1,7 +1,7 @@
 <script lang="ts">
-  import * as Dialog from '$lib/components/ui/dialog';
+  import * as Dialog from '#lib/components/ui/dialog';
   import { Calculator, ArrowUpRight } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   let videoCount = $state(8);
   let turnaround = $state<'48h' | '24h'>('48h');

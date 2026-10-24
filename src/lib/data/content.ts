@@ -7,7 +7,7 @@ import type {
   MegaMenuItem,
   ProductLink,
   ProcessStep
-} from '$lib/types';
+} from '#lib/types';
 
 export const PRODUCTS: ProductLink[] = [
   {

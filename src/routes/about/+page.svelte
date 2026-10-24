@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ArrowUpRight, Globe, Users } from '@lucide/svelte';
-  import { ui } from '$lib/stores/ui.svelte';
+  import { ui } from '#lib/stores/ui.svelte';
 
   const pillars = [
     {

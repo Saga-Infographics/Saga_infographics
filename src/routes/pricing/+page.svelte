@@ -1,6 +1,6 @@
 <script lang="ts">
-  import PricingSection from '$lib/components/PricingSection.svelte';
-  import FaqSection from '$lib/components/FaqSection.svelte';
+  import PricingSection from '#lib/components/PricingSection.svelte';
+  import FaqSection from '#lib/components/FaqSection.svelte';
 </script>
 
 <svelte:head>

@@ -1,4 +1,4 @@
-import { SERVICES } from '$lib/data/content';
+import { SERVICES } from '#lib/data/content';
 
 const SITE = 'https://saga.com.np';
 const PATHS = ['/', '/services', '/about', '/pricing', '/contact', '/privacy-policy', '/terms'];
