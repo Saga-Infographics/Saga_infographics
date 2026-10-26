@@ -27,6 +27,16 @@
     description:
       'Short-form video editing (YouTube Shorts, Instagram Reels, TikTok), motion graphics and web development agency in Kathmandu, Nepal.',
     email: 'info@saga.com.np',
+    foundingLocation: 'Kathmandu, Nepal',
+    areaServed: 'Worldwide',
+    priceRange: '$$',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: 'info@saga.com.np',
+      telephone: '+977 980-5677536',
+      availableLanguage: ['English']
+    },
     telephone: '+977 980-5677536',
     address: {
       '@type': 'PostalAddress',

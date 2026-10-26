@@ -6,7 +6,7 @@
   <title>Privacy Policy — Saga Infographics</title>
   <meta
     name="description"
-    content="How Saga Infographics collects, uses, and protects information you share through the saga.com.np website."
+    content="How Saga Infographics collects, uses, and protects the information you share through saga.com.np, including contact and booking forms."
   />
 </svelte:head>
 

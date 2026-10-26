@@ -1,6 +1,6 @@
 ---
 title: How Long Should a YouTube Short Be in 2026?
-description: YouTube Shorts can now run up to 3 minutes, but longer is not always better. Here is what the limit is, what counts as a Short, and how to pick the right length.
+description: YouTube Shorts can now run up to 3 minutes, but longer is not always better. See what counts as a Short and how to pick the right length.
 date: 2026-10-24
 tags: YouTube Shorts, video editing, short-form video
 ---
