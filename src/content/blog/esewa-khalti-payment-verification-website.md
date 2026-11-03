@@ -11,7 +11,7 @@ A redirect back to your site does not prove that a customer paid. On an eSewa or
 
 Khalti's ePayment docs say the return URL carries the `pidx` and a status such as Completed, Pending or User canceled. A Pending status means you should call the lookup API. The docs call the lookup result the final validation, not the redirect parameters ([Khalti ePayment docs](https://docs.khalti.com/khalti-epayment)).
 
-eSewa's developer pages make the same point from another angle. The ePay v2 page says the merchant should compare the signature eSewa sends with one the merchant generates. The ePay page says that if no response arrives within five minutes, the status check API can confirm the payment ([eSewa ePay v2](https://developer.esewa.com.np/pages/Epay-V2), [eSewa ePay](https://developer.esewa.com.np/pages/Epay)).
+eSewa's developer pages make the same point from another angle. The ePay v2 page says the merchant should compare the signature eSewa sends with one the merchant generates. The ePay page says that if no response arrives within five minutes, the status check API can confirm the payment ([eSewa ePay](https://developer.esewa.com.np/pages/Epay)).
 
 Community code follows the same pattern. The eSewa PHP SDK keeps a status check as a fallback when a response looks wrong ([esewa-sdk-php](https://github.com/sudiptpa/esewa-sdk-php)). The Python package `nepal-gateways` wraps both gateways with a sandbox mode, success and failure callback URLs and a verify step ([PyPI](https://pypi.org/project/nepal-gateways/)).
 
