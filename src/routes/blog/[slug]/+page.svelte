@@ -20,7 +20,7 @@
       headline: meta.title,
       description: meta.description,
       datePublished: meta.date,
-      dateModified: meta.date,
+      dateModified: meta.updated ?? meta.date,
       image: 'https://saga.com.np/og.png',
       mainEntityOfPage: `https://saga.com.np/blog/${meta.slug}`,
       author: { '@type': 'Person', name: 'Sagar Shrestha', worksFor: { '@id': 'https://saga.com.np/#organization' } },
@@ -59,7 +59,8 @@
     </a>
 
     <div class="text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-      {fmt(meta.date)}
+      By Sagar Shrestha · {fmt(meta.date)}{#if meta.updated && meta.updated !== meta.date}
+        · Updated {fmt(meta.updated)}{/if}
     </div>
     <h1 class="mt-2 text-3xl sm:text-5xl font-extrabold text-ink tracking-tight leading-tight">
       {meta.title}

@@ -5,6 +5,7 @@ export type PostMeta = {
   title: string;
   description: string;
   date: string; // YYYY-MM-DD
+  updated?: string; // YYYY-MM-DD, set when a post is refreshed
   tags: string[];
 };
 
@@ -13,6 +14,7 @@ export type PostMeta = {
 // title: ...
 // description: ...
 // date: 2026-10-24
+// updated: 2026-11-10   (optional)
 // tags: a, b
 // ---
 const files = import.meta.glob('/src/content/blog/*.md', {
@@ -34,6 +36,7 @@ function parse(path: string, raw: string) {
     title: fm.title ?? slug,
     description: fm.description ?? '',
     date: fm.date ?? '1970-01-01',
+    updated: fm.updated || undefined,
     tags: (fm.tags ?? '').split(',').map((t) => t.trim()).filter(Boolean)
   };
   return { meta, body: match?.[2] ?? raw };

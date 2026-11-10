@@ -9,7 +9,7 @@ export const GET = () => {
   const pages = [
     ...PATHS.map((p) => ({ path: p, lastmod: today })),
     ...SERVICES.map((s) => ({ path: `/services/${s.slug}`, lastmod: today })),
-    ...listPosts().map((p) => ({ path: `/blog/${p.slug}`, lastmod: p.date }))
+    ...listPosts().map((p) => ({ path: `/blog/${p.slug}`, lastmod: p.updated ?? p.date }))
   ];
   const urls = pages
     .map(
