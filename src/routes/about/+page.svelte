@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-  <title>About Saga — Short-Form Video & Web Agency in Kathmandu</title>
+  <title>About Saga | Video & Web Agency in Kathmandu | Saga Infographics</title>
   <meta
     name="description"
     content="Saga is a Kathmandu-based creative agency of 45+ editors and developers producing short-form video and web projects for global creators and brands."

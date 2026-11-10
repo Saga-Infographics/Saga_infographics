@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-  <title>Viral Reels & YouTube Shorts Editing Agency | Saga, Nepal</title>
+  <title>Viral Reels & YouTube Shorts Editing Agency | Saga Infographics</title>
   <meta
     name="description"
     content="Saga edits YouTube Shorts, Instagram Reels and TikTok videos with a 48-hour turnaround, plus React/Next.js web development, for creators and brands."

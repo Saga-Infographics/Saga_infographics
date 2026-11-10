@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Terms & Conditions — Saga Infographics</title>
+  <title>Terms & Conditions | Saga Infographics</title>
   <meta
     name="description"
     content="The terms that govern your use of the Saga Infographics website, our video editing and web development services, payments and revisions."

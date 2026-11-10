@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-  <title>Contact — Saga Infographics</title>
+  <title>Contact | Saga Infographics</title>
   <meta
     name="description"
     content="Questions about Saga's editing workflows or custom web development packages? Our team responds within 2 hours."

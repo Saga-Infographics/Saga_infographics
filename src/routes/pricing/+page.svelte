@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>Video Editing Pricing & Plans | Saga Infographics, Nepal</title>
+  <title>Video Editing Pricing & Plans | Saga Infographics</title>
   <meta
     name="description"
     content="Transparent monthly Saga plans or custom project scope. No long-term lock-in — scale up, pause, or cancel anytime."

@@ -21,17 +21,32 @@
       description: meta.description,
       datePublished: meta.date,
       dateModified: meta.date,
+      image: 'https://saga.com.np/og.png',
       mainEntityOfPage: `https://saga.com.np/blog/${meta.slug}`,
-      author: { '@id': 'https://saga.com.np/#organization' },
+      author: { '@type': 'Person', name: 'Sagar Shrestha', worksFor: { '@id': 'https://saga.com.np/#organization' } },
       publisher: { '@id': 'https://saga.com.np/#organization' }
+    }).replace(/</g, '\\u003c')}<\/script>`
+  );
+
+  const breadcrumbJsonLd = $derived(
+    `<script type="application/ld+json">${JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://saga.com.np' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://saga.com.np/blog' },
+        { '@type': 'ListItem', position: 3, name: meta.title }
+      ]
     }).replace(/</g, '\\u003c')}<\/script>`
   );
 </script>
 
 <svelte:head>
-  <title>{meta.title} | Saga Blog</title>
+  <title>{meta.title} | Saga Infographics</title>
+  <meta property="article:published_time" content={meta.date} />
   <meta name="description" content={meta.description} />
   {@html articleJsonLd}
+  {@html breadcrumbJsonLd}
 </svelte:head>
 
 <div class="py-12 bg-canvas min-h-screen">

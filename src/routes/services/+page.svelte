@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>Video Editing, Motion Graphics & Web Dev Services | Saga</title>
+  <title>Video Editing, Motion Graphics & Web Dev Services | Saga Infographics</title>
   <meta
     name="description"
     content="Explore Saga's services: YouTube Shorts and Reels editing, TikTok production, motion graphics, and React/Next.js web development, all with 48-hour SLAs."

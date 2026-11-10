@@ -5,9 +5,10 @@ const SITE = 'https://saga.com.np';
 const PATHS = ['/', '/services', '/about', '/pricing', '/blog', '/contact', '/privacy-policy', '/terms'];
 
 export const GET = () => {
+  const today = new Date().toISOString().slice(0, 10);
   const pages = [
-    ...PATHS.map((p) => ({ path: p, lastmod: '' })),
-    ...SERVICES.map((s) => ({ path: `/services/${s.slug}`, lastmod: '' })),
+    ...PATHS.map((p) => ({ path: p, lastmod: today })),
+    ...SERVICES.map((s) => ({ path: `/services/${s.slug}`, lastmod: today })),
     ...listPosts().map((p) => ({ path: `/blog/${p.slug}`, lastmod: p.date }))
   ];
   const urls = pages

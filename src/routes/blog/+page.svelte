@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-  <title>Blog — Short-Form Video Editing & Web Tips | Saga</title>
+  <title>Blog: Short-Form Video Editing & Web Tips | Saga Infographics</title>
   <meta
     name="description"
     content="Practical guides on short-form video editing, YouTube Shorts, Instagram Reels, TikTok and web development from the Saga team in Kathmandu."
