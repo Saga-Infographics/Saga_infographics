@@ -9,6 +9,9 @@
   // import ReviewsSection from '#lib/components/ReviewsSection.svelte';
   import PricingSection from '#lib/components/PricingSection.svelte';
   import FaqSection from '#lib/components/FaqSection.svelte';
+  import LatestPosts from '#lib/components/LatestPosts.svelte';
+
+  let { data } = $props();
 </script>
 
 <svelte:head>
@@ -35,5 +38,6 @@
   <ReviewsSection />
   -->
   <PricingSection />
+  <LatestPosts posts={data.latestPosts} />
   <FaqSection />
 </main>
